@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{CCFDBF46-D95F-4D6C-A394-37F4BE54536B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfazWeb", "InterfazWeb\InterfazWeb.csproj", "{7B0AA15C-BC83-426D-93EF-D09C5F86EAB1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5361AC77-F96F-45F5-92BA-74267DFCA7B3} = {5361AC77-F96F-45F5-92BA-74267DFCA7B3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesosDB", "AccesosDB\AccesosDB.csproj", "{63B13F23-01E5-413B-98AC-92F5EDC1E900}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFServices", "WCFServices\", "{5361AC77-F96F-45F5-92BA-74267DFCA7B3}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{ccfdbf46-d95f-4d6c-a394-37f4be54536b}|Dominio.dll;{63B13F23-01E5-413B-98AC-92F5EDC1E900}|AccesosDB.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58486"
+		Debug.AspNetCompiler.PhysicalPath = "WCFServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58486\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58486"
+		Release.AspNetCompiler.PhysicalPath = "WCFServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58486\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58486"
+		SlnRelativePath = "WCFServices\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCFDBF46-D95F-4D6C-A394-37F4BE54536B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCFDBF46-D95F-4D6C-A394-37F4BE54536B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCFDBF46-D95F-4D6C-A394-37F4BE54536B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCFDBF46-D95F-4D6C-A394-37F4BE54536B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B0AA15C-BC83-426D-93EF-D09C5F86EAB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B0AA15C-BC83-426D-93EF-D09C5F86EAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B0AA15C-BC83-426D-93EF-D09C5F86EAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B0AA15C-BC83-426D-93EF-D09C5F86EAB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B13F23-01E5-413B-98AC-92F5EDC1E900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B13F23-01E5-413B-98AC-92F5EDC1E900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B13F23-01E5-413B-98AC-92F5EDC1E900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B13F23-01E5-413B-98AC-92F5EDC1E900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5361AC77-F96F-45F5-92BA-74267DFCA7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5361AC77-F96F-45F5-92BA-74267DFCA7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5361AC77-F96F-45F5-92BA-74267DFCA7B3}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5361AC77-F96F-45F5-92BA-74267DFCA7B3}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

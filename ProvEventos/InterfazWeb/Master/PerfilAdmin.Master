@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PerfilAdmin.master.cs" Inherits="InterfazWeb.Master.PerfilAdmin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Panel ID="PanelOnlyLoginTrue" runat="server">
+            <header>
+                <div id="HeadAdmin">
+                    <img src="../theme/img/admin.jpg" style="width:100%;"/>
+                    <div class="isLoginTrue">
+                        <span style="text-align: left;float:left;">
+                            Bienvenido 
+                            <asp:Label ID="lblNombreUsuario" runat="server" Text=" "></asp:Label>
+                        </span>
+                        <span style="text-align: right;float:right;">
+                            <asp:LinkButton ID="LinkButtonSalir" runat="server" OnClick="LinkButtonSalir_Click">Salir</asp:LinkButton>
+                        </span>
+                    </div>
+                </div>
+            </header>
+        </asp:Panel>
+
+        <asp:Panel ID="PanelMenuLateral" runat="server" CssClass="PanelMenuLateral">
+
+        <p>
+            <asp:LinkButton ID="LinkButtonABMOrganizador" runat="server" OnClick="LinkButtonABMOrganizador_Click">ABM de Organizador</asp:LinkButton>
+        </p>
+        <p>
+            <asp:LinkButton ID="LinkButtonABMEvento" runat="server" OnClick="LinkButtonABMEvento_Click">ABM de Evento</asp:LinkButton>
+        </p>
+        <p>
+            <asp:LinkButton ID="LinkButtonABMServicio" runat="server" OnClick="LinkButtonABMServicio_Click">ABM de Servicio</asp:LinkButton>
+        </p>
+        <p>
+            <asp:LinkButton ID="LinkButtonABMProveedor" runat="server" OnClick="LinkButtonABMProveedor_Click">ABM de Proveedor</asp:LinkButton>
+        </p>
+        <p>
+            <asp:LinkButton ID="LinkButtonCatalogoServicios" runat="server" OnClick="LinkButtonCatalogoServicios_Click">Catálogo de Servicios</asp:LinkButton>
+        </p>
+        <p>
+            <asp:LinkButton ID="LinkButtonListadoProveedores" runat="server" OnClick="LinkButtonListadoProveedores_Click">Listado de Proveedores</asp:LinkButton>
+        </p>
+        <p>
+            <asp:LinkButton ID="LinkButtonObtenerProveedorPorRUT" runat="server" OnClick="LinkButtonObtenerProveedorPorRUT_Click">Obtener proveedor por RUT</asp:LinkButton>
+        </p>
+        <p>
+            <asp:LinkButton ID="LinkButtonListadoOrganizadores" runat="server" OnClick="LinkButtonListadoOrganizadores_Click">Listado de Organizadores</asp:LinkButton>
+        </p>
+        <p>
+            <asp:LinkButton ID="LinkButtonEventosPorOrganizador" runat="server" OnClick="LinkButtonEventosPorOrganizador_Click">Listado de Eventos por Organizador</asp:LinkButton>
+        </p>
+    
+        </asp:Panel>
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+   
+    </form>
+    <style>
+        body {
+            background: none;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        .SeñaAPagar {
+            background-color: #d1d1d1;
+        }
+        #HeadAdmin {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            float: left;
+            
+        }
+            #HeadAdmin img {
+                width: 100%;
+            }
+        .isLoginTrue {
+            width: 96%;
+            margin: 1% 2%;
+            background: #DDDDDD;
+        }
+        #PanelMenuLateral {
+            background-color:#F1F1F1;
+            width: 25%; 
+            float: left;
+        }
+            #PanelMenuLateral p {
+                padding: 2%;
+                margin: 0;
+                width: 100%;
+                float: left;
+                
+            }
+            #PanelMenuLateral p a {
+                text-decoration: none;
+                font-size: 16px;
+                color: blue;  
+                border-bottom: #cccccc; 
+            }
+            #PanelMenuLateral p a:hover {
+                text-decoration: none;
+                color: white;
+                background-color: #333333; 
+            }
+        #PanelContenido {
+            width: 73%;
+            float: left;
+            margin-left: 2%;
+            background-color: #FFFFFF;
+        }
+    </style>
+</body>
+</html>

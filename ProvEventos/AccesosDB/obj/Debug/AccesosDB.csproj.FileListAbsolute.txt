@@ -1,0 +1,5 @@
+C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\bin\Debug\AccesosDB.dll
+C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\bin\Debug\AccesosDB.pdb
+C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\obj\Debug\AccesosDB.csprojResolveAssemblyReference.cache
+C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\obj\Debug\AccesosDB.dll
+C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\obj\Debug\AccesosDB.pdb
