@@ -167,10 +167,12 @@ namespace Dominio
             {
                 proveedor = new Proveedor
                 {
-                    FechaRegistro = DateTime.MinValue, //fila.IsDBNull(fila.GetOrdinal("fechaIngreso")) ? DateTime.MinValue : fila.GetDateTime(fila.GetOrdinal("fechaIngreso")).Date,
-                    VIP = true, //fila.IsDBNull(fila.GetOrdinal("VIP")).Equals("1") ? true : false,
-                    ArancelVIP = 0, //fila.IsDBNull(fila.GetOrdinal("arancelVIP")) ? 0 : fila.GetDouble(fila.GetOrdinal("arancelVIP")),
-                    Activo = fila.IsDBNull(fila.GetOrdinal("activo")) ? true : false,
+                    NombreApellido = fila.IsDBNull(fila.GetOrdinal("nombreCompleto")).ToString(),
+                    FechaRegistro = DateTime.Now,//fila.IsDBNull(fila.GetOrdinal("fechaIngreso")) ? DateTime.MinValue : fila.GetDateTime(fila.GetOrdinal("fechaIngreso")).Date,
+                    VIP = true,//fila.IsDBNull(fila.GetOrdinal("VIP")).Equals("1") ? true : false,
+                    ArancelVIP = 12, //fila.IsDBNull(fila.GetOrdinal("arancelVIP")) ? 0 : fila.GetDouble(fila.GetOrdinal("arancelVIP")),
+                    Activo = true, //fila.IsDBNull(fila.GetOrdinal("activo")) ? true : false,
+                    TipoPerfil = EnumPerfil.Proveedor,
                 };
             }
             return proveedor;

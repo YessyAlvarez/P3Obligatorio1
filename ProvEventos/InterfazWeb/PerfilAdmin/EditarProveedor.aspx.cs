@@ -73,8 +73,25 @@ namespace InterfazWeb.PerfilAdmin
             {
                 arancelVIP = Convert.ToDouble(TextBoxArancelVIP.Text);
             }
-            miServicio.WCFChangeDatosProveedor(idProveedor, fechaIngreso, esVIP, arancelVIP);
-
+            bool exito = miServicio.WCFChangeDatosProveedor(idProveedor, fechaIngreso, esVIP, arancelVIP);
+            if (exito)
+            {
+                //Muestro los paneles
+                PanelResultadoProveedor.Visible = false;
+                PanelBuscadorPorID.Visible = true;
+                PanelMensaje.Visible = true;
+                //Muestro el mensaje
+                LabelMensaje.Text = "Proveedor modificado con éxito.";
+            }
+            else
+            {
+                //Muestro los paneles
+                PanelResultadoProveedor.Visible = false;
+                PanelBuscadorPorID.Visible = true;
+                PanelMensaje.Visible = true;
+                //Muestro el mensaje
+                LabelMensaje.Text = "ERROR. No se pudo modificar al Proveedor. Intente nuevamente.";
+            }
         }
     }
 }

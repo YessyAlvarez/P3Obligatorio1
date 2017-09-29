@@ -48,6 +48,14 @@
     </p>
     <p>
     </p>
+    <asp:Panel ID="PanelMensajeAlta" runat="server">
+        <br />
+        <asp:Label ID="LabelMensaje" runat="server" Text=" "></asp:Label>
+        <br />
+        <br />
+        <asp:Button ID="ButtonNewAddProveedor" runat="server" OnClick="ButtonNewAddProveedor_Click" Text="Agregar otro proveedor" />
+        <br />
+    </asp:Panel>
     <p>
     </p>
     <p>

@@ -50,7 +50,9 @@
     <asp:Panel ID="PanelMensaje" runat="server">
         <br />
         <br />
-        <asp:Label ID="LabelMensaje" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="LabelMensaje" runat="server" Text=" "></asp:Label>
+        <br />
+        <br />
         <br />
     </asp:Panel>
     <p>

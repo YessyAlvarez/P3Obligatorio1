@@ -10,7 +10,10 @@ namespace InterfazWeb.PerfilAdmin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack){
+                PanelAltaProveedor.Visible = true;
+                PanelMensajeAlta.Visible = false;
+            }
         }
 
         protected void ButtonAltaProveedor_Click(object sender, EventArgs e)
@@ -30,8 +33,25 @@ namespace InterfazWeb.PerfilAdmin
                 arancelVIP = 0;
             }
             ServiceClient mio = new ServiceClient();
-            mio.WCFAddProveedor(nombreCompleto, usuario, password, esVIP, arancelVIP);
-            
+            bool exito = mio.WCFAddProveedor(nombreCompleto, usuario, password, esVIP, arancelVIP);
+            if (exito)
+            {
+                //Limpio los campos
+                limpiarCampos();
+                //Muestro los paneles
+                PanelAltaProveedor.Visible = false;
+                PanelMensajeAlta.Visible = true;
+                LabelMensaje.Text = "Proveedor agregado exitosamente";
+            }
+            else
+            {
+                //Limpio los campos
+                limpiarCampos();
+                //Muestro los paneles
+                PanelAltaProveedor.Visible = false;
+                PanelMensajeAlta.Visible = true;
+                LabelMensaje.Text = "Intente nuevamente. El Proveedor no fue ingresado al sistema.";
+            }
         }
 
         protected void DropDownListAltaVIP_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,6 +61,24 @@ namespace InterfazWeb.PerfilAdmin
             {
                 PanelArancelVIP.Visible = false;
             }
+        }
+
+        protected void ButtonNewAddProveedor_Click(object sender, EventArgs e)
+        {
+            //Limpio los campos
+            limpiarCampos();
+            //Muestro los paneles
+            PanelAltaProveedor.Visible = true;
+            PanelMensajeAlta.Visible = false;
+        }
+
+
+        protected void limpiarCampos()
+        {
+            TextBoxAltaUsuario.Text = "";
+            TextBoxAltaPass.Text = "";
+            TextBoxAltaNombreCompleto.Text = "";
+            TextBoxAltaArancelVIP.Text = "";
         }
     }
 }

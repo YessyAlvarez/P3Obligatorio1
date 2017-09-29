@@ -40,13 +40,13 @@ namespace InterfazWeb.PerfilAdmin {
         protected global::System.Web.UI.WebControls.Button ButtonBuscarProveedor;
         
         /// <summary>
-        /// Control Panel1.
+        /// Control PanelDatosProveedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Panel PanelDatosProveedor;
         
         /// <summary>
         /// Control LabelNombre.
@@ -85,22 +85,22 @@ namespace InterfazWeb.PerfilAdmin {
         protected global::System.Web.UI.WebControls.Label LabelArancel;
         
         /// <summary>
-        /// Control Button1.
+        /// Control ButtonEliminarProveedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button ButtonEliminarProveedor;
         
         /// <summary>
-        /// Control Button2.
+        /// Control ButtonCancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button ButtonCancelar;
         
         /// <summary>
         /// Control PanelMensaje.

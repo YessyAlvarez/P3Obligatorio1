@@ -14,7 +14,12 @@ namespace InterfazWeb.PerfilAdmin
         ServiceClient miServicio = new ServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                PanelBuscarProveedor.Visible = true;
+                PanelDatosProveedor.Visible = false;
+                PanelMensaje.Visible = false;
+            }
         }
 
         protected void ButtonBuscarProveedor_Click(object sender, EventArgs e)
@@ -34,6 +39,10 @@ namespace InterfazWeb.PerfilAdmin
 
         protected void cargarDatosProveedor(Proveedor proveedor)
         {
+            //Muestro los paneles
+            PanelDatosProveedor.Visible = true;
+            PanelMensaje.Visible = false;
+            //Cargo los datos
             LabelNombre.Text = proveedor.NombreApellido;
             LabelFechaIngreso.Text = proveedor.FechaRegistro.ToShortDateString();
             LabelVIP.Text = proveedor.VIP ? "Si" : "No";
@@ -55,6 +64,31 @@ namespace InterfazWeb.PerfilAdmin
 
             PanelMensaje.Visible = false;
 
+        }
+
+
+        protected void ButtonEliminarProveedor_Click(object sender, EventArgs e)
+        {
+            string idProveedor = TextBoxIdBuscadorProveedor.Text;
+            bool exito = miServicio.WCFDesactivarProveedor(idProveedor);
+            if (exito)
+            {
+                PanelDatosProveedor.Visible = false;
+                PanelMensaje.Visible = true;
+                LabelMensaje.Text = "Proveedor eliminado con éxito.";
+            }
+            else
+            {
+                PanelDatosProveedor.Visible = false;
+                PanelMensaje.Visible = true;
+                LabelMensaje.Text = "ERROR. Proveedor NO eliminado.";
+            }
+        }
+
+        protected void ButtonCancelar_Click(object sender, EventArgs e)
+        {
+            PanelDatosProveedor.Visible = false;
+            PanelMensaje.Visible = false;
         }
     }
 }
