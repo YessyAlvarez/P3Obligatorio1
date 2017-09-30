@@ -2,26 +2,31 @@ create database ProvEvento;
 use ProvEvento;
 
 create table Usuario(
-	idUsuario INTEGER IDENTITY(1,1) PRIMARY KEY,
+	nombreUsuario VARCHAR(50) PRIMARY KEY NOT NULL,
+	password VARCHAR(50) NOT NULL,
 	nombreCompleto VARCHAR(50) NOT NULL,
-	nombreUsuario VARCHAR(50) UNIQUE NOT NULL,
-	contrasenia VARCHAR(50) NOT NULL,
-	tipoPerfil CHAR(1) NOT NULL, 	
+	tipoPerfil VARCHAR(1) NOT NULL, 	
 );
 
-INSERT INTO Usuario values('Grillo Saltarin', 'gp', '123', 1);
-INSERT INTO Usuario values('Pepe Trueno', '123', 'pt', 2);
+INSERT INTO Usuario values('admin1', 'PataNoel', ' Heber Gonzalez', 1);
+INSERT INTO Usuario values('admin2', 'Top123', 'Pinion Arturo Fijo', 1);
+INSERT INTO Usuario values('20100510', '123', 'GauchitoDeOro', 2);
+INSERT INTO Usuario values('19920505', '123', 'Brihulu', 2);
 
 create table Proveedor(
-	idProveedor INTEGER PRIMARY KEY REFERENCES Usuario,
+	idProveedor VARCHAR(50) FOREIGN KEY REFERENCES Usuario,
+	nombreFantasia VARCHAR(50) NOT NULL,
+	email VARCHAR(50) UNIQUE NOT NULL,
 	fechaIngreso Date NOT NULL,
+	telefono VARCHAR(50) NOT NULL,
 	VIP CHAR(1) NOT NULL,
 	arancelVIP DECIMAL(9,2) NULL,
 	activo CHAR(1) NOT NULL,
+	FOREIGN KEY(idProveedor) REFERENCES Usuario(nombreUsuario),
 );
 
-INSERT INTO Proveedor VALUES(1, '20100510', 1, 10, 1);
-INSERT INTO Proveedor VALUES(2, '19920505', 1, 25, 1);
+INSERT INTO Proveedor VALUES('20100510','GauchitoDeOro','confielgaucho@gmail.com','19900610','0303456', 1, 10, 1);
+INSERT INTO Proveedor VALUES('19920505','Brihulu','brisabel@hotmail.com','19871110','24019610', 0, 0, 1);
 
 create table Servicio(
 	idServicio INTEGER PRIMARY KEY,
@@ -134,3 +139,17 @@ INSERT INTO ServicioTipoEvento VALUES(12,13);
 INSERT INTO ServicioTipoEvento VALUES(12,14);
 INSERT INTO ServicioTipoEvento VALUES(13,13);
 INSERT INTO ServicioTipoEvento VALUES(13,14);
+
+
+
+
+create table Proveedor_Servicios(
+	idProveedor VARCHAR(50) NOT NULL,
+	idServicio INTEGER NOT NULL,
+	foto VARCHAR(255) UNIQUE NOT NULL,
+	descripcion VARCHAR(100) NOT NULL,
+	activo CHAR(1) NOT NULL,
+	FOREIGN KEY (idProveedor) REFERENCES Proveedor(idProveedor),
+	FOREIGN KEY (idServicio) REFERENCES Servicio(idServicio)
+);
+
