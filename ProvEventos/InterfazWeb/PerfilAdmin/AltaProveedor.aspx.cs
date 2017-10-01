@@ -22,6 +22,9 @@ namespace InterfazWeb.PerfilAdmin
             string usuario = TextBoxAltaUsuario.Text;
             string password = TextBoxAltaPass.Text;
             string nombreCompleto = TextBoxAltaNombreCompleto.Text;
+            string nombreFantasia = TextBoxNombreFantasia.Text;
+            string email = TextBoxEmail.Text;
+            string telefono = TextBoxTelefono.Text;
             bool esVIP = DropDownListAltaVIP.SelectedValue.Equals("Si") ? true : false;
             double arancelVIP = Convert.ToDouble(TextBoxAltaArancelVIP.Text);
             if (esVIP)
@@ -33,7 +36,7 @@ namespace InterfazWeb.PerfilAdmin
                 arancelVIP = 0;
             }
             ServiceClient mio = new ServiceClient();
-            bool exito = mio.WCFAddProveedor(nombreCompleto, usuario, password, esVIP, arancelVIP);
+            bool exito = mio.WCFAddProveedor(nombreCompleto, usuario, password, nombreFantasia, email, telefono, esVIP, arancelVIP);
             if (exito)
             {
                 //Limpio los campos

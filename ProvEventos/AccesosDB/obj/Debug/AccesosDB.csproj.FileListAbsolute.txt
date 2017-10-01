@@ -1,8 +1,3 @@
-C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\bin\Debug\AccesosDB.dll
-C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\bin\Debug\AccesosDB.pdb
-C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\obj\Debug\AccesosDB.csprojResolveAssemblyReference.cache
-C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\obj\Debug\AccesosDB.dll
-C:\Users\juan sarramia\Desktop\Yessy\167690-216262\Obligatorio\ProvEventos\AccesosDB\obj\Debug\AccesosDB.pdb
 C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\P3Obligatorio1\ProvEventos\AccesosDB\bin\Debug\AccesosDB.dll
 C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\P3Obligatorio1\ProvEventos\AccesosDB\bin\Debug\AccesosDB.pdb
 C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\P3Obligatorio1\ProvEventos\AccesosDB\obj\Debug\AccesosDB.csprojResolveAssemblyReference.cache

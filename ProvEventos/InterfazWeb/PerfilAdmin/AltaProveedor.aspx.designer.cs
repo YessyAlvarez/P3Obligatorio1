@@ -40,6 +40,15 @@ namespace InterfazWeb.PerfilAdmin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxAltaPass;
         
         /// <summary>
+        /// Control TextBoxNombreFantasia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNombreFantasia;
+        
+        /// <summary>
         /// Control TextBoxAltaNombreCompleto.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,24 @@ namespace InterfazWeb.PerfilAdmin {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxAltaNombreCompleto;
+        
+        /// <summary>
+        /// Control TextBoxEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
+        
+        /// <summary>
+        /// Control TextBoxTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxTelefono;
         
         /// <summary>
         /// Control DropDownListAltaVIP.

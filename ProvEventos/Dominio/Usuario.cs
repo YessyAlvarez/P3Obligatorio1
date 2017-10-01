@@ -33,7 +33,7 @@ namespace Dominio
         {
             EnumPerfil perfilUsuario = EnumPerfil.NoAutorizado;
 
-            string consulta = @"SELECT tipoPerfil FROM Usuario WHERE nombreUsuario='" + usuario + "' AND contrasenia='" + password + "';";
+            string consulta = @"SELECT tipoPerfil FROM Usuario WHERE nombreUsuario='" + usuario + "' AND password='" + password + "';";
             SqlConnection cn = Conexion.CrearConexion();
             SqlCommand cmd = new SqlCommand(consulta, cn);
             try

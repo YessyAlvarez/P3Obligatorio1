@@ -5,13 +5,16 @@ using Dominio;
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
 public class Service : IService
 {
-    public bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, bool esVIP, double valorArancelVIP)
+    public bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP)
     {
         Proveedor p = new Proveedor
         {
             NombreApellido = nombreCompletoProv,
             UsuarioLogin = nombreUsuario,
             Password = passw,
+            NombreFantasia = nombreFantasia,
+            Email = email, 
+            Telefono = telefono,
             TipoPerfil = EnumPerfil.Proveedor,
             FechaRegistro = DateTime.Now,
             VIP = esVIP,

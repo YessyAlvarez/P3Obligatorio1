@@ -41,8 +41,11 @@
         <xs:sequence>
           <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
           <xs:element minOccurs="0" name="ArancelVIP" type="xs:double" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
           <xs:element minOccurs="0" name="ListaServicios" nillable="true" type="tns:ArrayOfServicioProveedor" />
+          <xs:element minOccurs="0" name="NombreFantasia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="VIP" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>

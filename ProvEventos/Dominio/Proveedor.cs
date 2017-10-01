@@ -10,8 +10,12 @@ namespace Dominio
     public class Proveedor : Usuario
     {
         #region ATRIBUTOS
-        public DateTime FechaRegistro { set; get; }
         public static double ArancelAnual { set; get; }
+        public static string RUT { set; get; }
+        public string NombreFantasia { set; get; }
+        public string Email { set; get; }
+        public DateTime FechaRegistro { set; get; }
+        public string Telefono { set; get; }
         public bool VIP { set; get; }
         public double ArancelVIP { set; get; }
         public bool Activo { set; get; }
@@ -70,11 +74,11 @@ namespace Dominio
 
             SqlCommand cmd = new SqlCommand();
             SqlTransaction trn = null;
-            cmd.CommandText = @"INSERT INTO Usuario VALUES(@nombre,@usuario,@passw,@perfil);SELECT CAST (SCOPE_IDENTITY() AS INT);";
-            cmd.Parameters.AddWithValue("@nombre", this.NombreApellido);
+            cmd.CommandText = @"INSERT INTO Usuario VALUES(@usuario,@passw,@nombre,@perfil);";
             cmd.Parameters.AddWithValue("@usuario", this.UsuarioLogin);
             cmd.Parameters.AddWithValue("@passw", this.Password);
-            cmd.Parameters.AddWithValue("@perfil", this.TipoPerfil);
+            cmd.Parameters.AddWithValue("@nombre", this.NombreApellido);
+            cmd.Parameters.AddWithValue("@perfil", 2);
             cmd.Connection = cn;
 
             try
@@ -82,13 +86,17 @@ namespace Dominio
                 Conexion.AbrirConexion(cn);
                 trn = cn.BeginTransaction();
                 cmd.Transaction = trn;
-                int ultimoId = (int)cmd.ExecuteScalar();
+                cmd.ExecuteNonQuery();
+                //int ultimoId = (int)cmd.ExecuteScalar();
 
                 cmd.Parameters.Clear();
-                cmd.CommandText = @"INSERT INTO Proveedor VALUES(@idProv,@fecha,@vip,@arancelVIP,@activo)";
+                cmd.CommandText = @"INSERT INTO Proveedor VALUES(@rut,@nombreFantasia,@email,@fecha,@telefono,@vip,@arancelVIP,@activo)";
 
-                cmd.Parameters.Add(new SqlParameter("@idProv", ultimoId));
+                cmd.Parameters.Add(new SqlParameter("@rut", RUT));
+                cmd.Parameters.Add(new SqlParameter("@nombreFantasia", NombreFantasia));
+                cmd.Parameters.Add(new SqlParameter("@email", Email));
                 cmd.Parameters.Add(new SqlParameter("@fecha", DateTime.Now));
+                cmd.Parameters.Add(new SqlParameter("@telefono", Telefono));
                 cmd.Parameters.Add(new SqlParameter("@vip", this.VIP));
                 cmd.Parameters.Add(new SqlParameter("@arancelVIP", this.ArancelVIP));
                 cmd.Parameters.Add(new SqlParameter("@activo", 1));

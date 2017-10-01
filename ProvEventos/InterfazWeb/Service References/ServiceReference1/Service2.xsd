@@ -18,9 +18,12 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="nombreCompletoProv" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passw" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreFantasia" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="esVIP" type="xs:boolean" />
-        <xs:element minOccurs="0" name="valorArncelVIP" type="xs:double" />
+        <xs:element minOccurs="0" name="valorArancelVIP" type="xs:double" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -10,17 +10,26 @@
         </p>
     <asp:Panel ID="PanelAltaProveedor" runat="server">
         <br />
-        Usuario:<br />
+        RUT:<br />
         <asp:TextBox ID="TextBoxAltaUsuario" runat="server"></asp:TextBox>
         <br />
         Password:<br />
         <asp:TextBox ID="TextBoxAltaPass" runat="server"></asp:TextBox>
         <br />
+        Nombre de Fantasia<br />
+        <asp:TextBox ID="TextBoxNombreFantasia" runat="server"></asp:TextBox>
+        <br />
         <br />
         ---<br />
         <br />
-        Nombre Completo<br />
+        Nombre Completo Persona Fisica<br />
         <asp:TextBox ID="TextBoxAltaNombreCompleto" runat="server"></asp:TextBox>
+        <br />
+        Email<br />
+        <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
+        <br />
+        Telefono<br />
+        <asp:TextBox ID="TextBoxTelefono" runat="server"></asp:TextBox>
         <br />
         Es VIP<br />
         <asp:DropDownList ID="DropDownListAltaVIP" runat="server" OnSelectedIndexChanged="DropDownListAltaVIP_SelectedIndexChanged">

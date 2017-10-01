@@ -23,6 +23,7 @@ create table Proveedor(
 	arancelVIP DECIMAL(9,2) NULL,
 	activo CHAR(1) NOT NULL,
 	FOREIGN KEY(idProveedor) REFERENCES Usuario(nombreUsuario),
+	PRIMARY KEY(idProveedor)
 );
 
 INSERT INTO Proveedor VALUES('20100510','GauchitoDeOro','confielgaucho@gmail.com','19900610','0303456', 1, 10, 1);
@@ -143,13 +144,17 @@ INSERT INTO ServicioTipoEvento VALUES(13,14);
 
 
 
+
+
 create table Proveedor_Servicios(
 	idProveedor VARCHAR(50) NOT NULL,
-	idServicio INTEGER NOT NULL,
+	idServicio INTEGER,
 	foto VARCHAR(255) UNIQUE NOT NULL,
 	descripcion VARCHAR(100) NOT NULL,
 	activo CHAR(1) NOT NULL,
-	FOREIGN KEY (idProveedor) REFERENCES Proveedor(idProveedor),
-	FOREIGN KEY (idServicio) REFERENCES Servicio(idServicio)
+	FOREIGN KEY(idProveedor) REFERENCES Proveedor(idProveedor),
+	FOREIGN KEY(idServicio) REFERENCES Servicio(idServicio),
+	PRIMARY KEY(idProveedor,idServicio)
 );
+
 
