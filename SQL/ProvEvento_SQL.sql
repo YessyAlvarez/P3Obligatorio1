@@ -29,52 +29,52 @@ create table Proveedor(
 INSERT INTO Proveedor VALUES('20100510','GauchitoDeOro','confielgaucho@gmail.com','19900610','0303456', 1, 10, 1);
 INSERT INTO Proveedor VALUES('19920505','Brihulu','brisabel@hotmail.com','19871110','24019610', 0, 0, 1);
 
-create table Servicio(
-	idServicio INTEGER PRIMARY KEY,
-	nombreServicio VARCHAR(50) UNIQUE NOT NULL
-);
-
-INSERT INTO Servicio VALUES(1, 'Nacimientos');
-INSERT INTO Servicio VALUES(2, 'Cumpleaños');
-INSERT INTO Servicio VALUES(3, 'Casamientos');
-INSERT INTO Servicio VALUES(4, 'Aniversarios');
-INSERT INTO Servicio VALUES(5, 'Fiesta de egresados');
-INSERT INTO Servicio VALUES(6, 'Despedidas');
-INSERT INTO Servicio VALUES(7, 'Fiesta de fin de año');
-INSERT INTO Servicio VALUES(8, 'Dia del niños');
-INSERT INTO Servicio VALUES(9, 'Torneos');
-INSERT INTO Servicio VALUES(10, 'Reunion ex-alumnos');
-INSERT INTO Servicio VALUES(11, 'Torneos');
-INSERT INTO Servicio VALUES(12, 'Competencias');
-INSERT INTO Servicio VALUES(13, 'Campeonatos');
-INSERT INTO Servicio VALUES(14, 'Congresos');
-INSERT INTO Servicio VALUES(15, 'Ferias');
-INSERT INTO Servicio VALUES(16, 'Concursos');
-INSERT INTO Servicio VALUES(17, 'Conciertos');
-
 create table TipoEvento(
 	idEvento INTEGER PRIMARY KEY,
-	nombreEvento VARCHAR(50) UNIQUE NOT NULL,
+	nombreEvento VARCHAR(50) UNIQUE NOT NULL
+);
+
+INSERT INTO TipoEvento VALUES(1, 'Nacimientos');
+INSERT INTO TipoEvento VALUES(2, 'Cumpleaños');
+INSERT INTO TipoEvento VALUES(3, 'Casamientos');
+INSERT INTO TipoEvento VALUES(4, 'Aniversarios');
+INSERT INTO TipoEvento VALUES(5, 'Fiesta de egresados');
+INSERT INTO TipoEvento VALUES(6, 'Despedidas');
+INSERT INTO TipoEvento VALUES(7, 'Fiesta de fin de año');
+INSERT INTO TipoEvento VALUES(8, 'Dia del niños');
+INSERT INTO TipoEvento VALUES(9, 'Torneos');
+INSERT INTO TipoEvento VALUES(10, 'Reunion ex-alumnos');
+INSERT INTO TipoEvento VALUES(11, 'Torneos juveniles');
+INSERT INTO TipoEvento VALUES(12, 'Competencias');
+INSERT INTO TipoEvento VALUES(13, 'Campeonatos');
+INSERT INTO TipoEvento VALUES(14, 'Congresos');
+INSERT INTO TipoEvento VALUES(15, 'Ferias');
+INSERT INTO TipoEvento VALUES(16, 'Concursos');
+INSERT INTO TipoEvento VALUES(17, 'Conciertos');
+
+create table Servicio(
+	idServicio INTEGER PRIMARY KEY,
+	nombreServicio VARCHAR(50) UNIQUE NOT NULL,
 	descripcion VARCHAR(50) NOT NULL
 );
 
-INSERT INTO TipoEvento VALUES(1,'Decoracion','Se ofrece decoraciones tematicas');
-INSERT INTO TipoEvento VALUES(2,'Salon de fiestas','Distintas opciones de tamaño');
-INSERT INTO TipoEvento VALUES(3,'Mobiliario','Se ofrece ');
-INSERT INTO TipoEvento VALUES(4,'Banquetes','Comida Gorumet');
-INSERT INTO TipoEvento VALUES(5,'Candy Bar','Carros de dulces');
-INSERT INTO TipoEvento VALUES(6,'Cupcakes','Muffins tematicos y de varios gustos');
-INSERT INTO TipoEvento VALUES(7,'Fuente de chocolate','Deliciosa fuente de chocolate en varios tamaños');
-INSERT INTO TipoEvento VALUES(8,'Fuente de queso','Deliciosa fuente de queso en varios tamaños');
-INSERT INTO TipoEvento VALUES(9,'Mesa de dulces','Se ofrece mesas decoradas de dulces');
-INSERT INTO TipoEvento VALUES(10,'Pasteles','Distintos tipos de papeles');
-INSERT INTO TipoEvento VALUES(11,'Inflables','Castillos inflables');
-INSERT INTO TipoEvento VALUES(12,'Globos','Globos, globos de helio');
-INSERT INTO TipoEvento VALUES(13,'Invitaciones','Postales, cartas, distintas formas de invitaciones');
-INSERT INTO TipoEvento VALUES(14,'Musica en vivo','Shows en vivo, musicas variadas, artistas invitados');
-INSERT INTO TipoEvento VALUES(15,'Magos','Espectaculo de magos');
-INSERT INTO TipoEvento VALUES(16,'Payasos','Payasos');
-INSERT INTO TipoEvento VALUES(17,'Menage','Utileria y manteleria');
+INSERT INTO Servicio VALUES(1,'Decoracion','Se ofrece decoraciones tematicas');
+INSERT INTO Servicio VALUES(2,'Salon de fiestas','Distintas opciones de tamaño');
+INSERT INTO Servicio VALUES(3,'Mobiliario','Se ofrece ');
+INSERT INTO Servicio VALUES(4,'Banquetes','Comida Gorumet');
+INSERT INTO Servicio VALUES(5,'Candy Bar','Carros de dulces');
+INSERT INTO Servicio VALUES(6,'Cupcakes','Muffins tematicos y de varios gustos');
+INSERT INTO Servicio VALUES(7,'Fuente de chocolate','Deliciosa fuente de chocolate en varios tamaños');
+INSERT INTO Servicio VALUES(8,'Fuente de queso','Deliciosa fuente de queso en varios tamaños');
+INSERT INTO Servicio VALUES(9,'Mesa de dulces','Se ofrece mesas decoradas de dulces');
+INSERT INTO Servicio VALUES(10,'Pasteles','Distintos tipos de papeles');
+INSERT INTO Servicio VALUES(11,'Inflables','Castillos inflables');
+INSERT INTO Servicio VALUES(12,'Globos','Globos, globos de helio');
+INSERT INTO Servicio VALUES(13,'Invitaciones','Postales, cartas, distintas formas de invitaciones');
+INSERT INTO Servicio VALUES(14,'Musica en vivo','Shows en vivo con musica y artistas invitados');
+INSERT INTO Servicio VALUES(15,'Magos','Espectaculo de magos');
+INSERT INTO Servicio VALUES(16,'Payasos','Payasos');
+INSERT INTO Servicio VALUES(17,'Menage','Utileria y manteleria');
 
 create table ServicioTipoEvento(
 	idServicio INTEGER,
@@ -140,9 +140,6 @@ INSERT INTO ServicioTipoEvento VALUES(12,13);
 INSERT INTO ServicioTipoEvento VALUES(12,14);
 INSERT INTO ServicioTipoEvento VALUES(13,13);
 INSERT INTO ServicioTipoEvento VALUES(13,14);
-
-
-
 
 
 
