@@ -10,6 +10,7 @@ public class Service : IService
         Proveedor p = new Proveedor
         {
             NombreApellido = nombreCompletoProv,
+            RUT = nombreUsuario,
             UsuarioLogin = nombreUsuario,
             Password = passw,
             NombreFantasia = nombreFantasia,

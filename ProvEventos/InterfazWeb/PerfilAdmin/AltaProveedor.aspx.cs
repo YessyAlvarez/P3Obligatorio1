@@ -26,14 +26,10 @@ namespace InterfazWeb.PerfilAdmin
             string email = TextBoxEmail.Text;
             string telefono = TextBoxTelefono.Text;
             bool esVIP = DropDownListAltaVIP.SelectedValue.Equals("Si") ? true : false;
-            double arancelVIP = Convert.ToDouble(TextBoxAltaArancelVIP.Text);
+            double arancelVIP = 0;
             if (esVIP)
             {
                 arancelVIP = Convert.ToDouble(TextBoxAltaArancelVIP.Text);
-            }
-            else
-            {
-                arancelVIP = 0;
             }
             ServiceClient mio = new ServiceClient();
             bool exito = mio.WCFAddProveedor(nombreCompleto, usuario, password, nombreFantasia, email, telefono, esVIP, arancelVIP);

@@ -11,7 +11,7 @@ namespace Dominio
     {
         #region ATRIBUTOS
         public static double ArancelAnual { set; get; }
-        public static string RUT { set; get; }
+        public string RUT { set; get; }
         public string NombreFantasia { set; get; }
         public string Email { set; get; }
         public DateTime FechaRegistro { set; get; }
@@ -76,7 +76,7 @@ namespace Dominio
             SqlTransaction trn = null;
             cmd.CommandText = @"INSERT INTO Usuario VALUES(@usuario,@passw,@nombre,@perfil);";
             cmd.Parameters.AddWithValue("@usuario", this.UsuarioLogin);
-            cmd.Parameters.AddWithValue("@passw", this.Password);
+            cmd.Parameters.AddWithValue("@passw", Usuario.MD5Hash(this.Password));
             cmd.Parameters.AddWithValue("@nombre", this.NombreApellido);
             cmd.Parameters.AddWithValue("@perfil", 2);
             cmd.Connection = cn;

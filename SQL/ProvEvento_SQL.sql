@@ -8,10 +8,10 @@ create table Usuario(
 	tipoPerfil VARCHAR(1) NOT NULL, 	
 );
 
-INSERT INTO Usuario values('admin1', 'PataNoel', ' Heber Gonzalez', 1);
-INSERT INTO Usuario values('admin2', 'Top123', 'Pinion Arturo Fijo', 1);
-INSERT INTO Usuario values('20100510', '123', 'GauchitoDeOro', 2);
-INSERT INTO Usuario values('19920505', '123', 'Brihulu', 2);
+INSERT INTO Usuario values('admin1', '202cb962ac59075b964b07152d234b70', ' Heber Gonzalez', 1);
+INSERT INTO Usuario values('admin2', '202cb962ac59075b964b07152d234b70', 'Pinion Arturo Fijo', 1);
+INSERT INTO Usuario values('20100510', '202cb962ac59075b964b07152d234b70', 'GauchitoDeOro', 2);
+INSERT INTO Usuario values('19920505', '202cb962ac59075b964b07152d234b70', 'Brihulu', 2);
 
 create table Proveedor(
 	idProveedor VARCHAR(50) FOREIGN KEY REFERENCES Usuario,
