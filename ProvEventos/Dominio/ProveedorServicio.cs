@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class ServicioProveedor
+    public class ProveedorServicio
     {
-        public Servicio Servicio { set; get; }
+        public string IdProveedor { set; get; }
+        public int IdServicio { set; get; }
         public string Imagen { set; get; }
         public string Descripcion { set; get; }
         public bool Activo { set; get; }

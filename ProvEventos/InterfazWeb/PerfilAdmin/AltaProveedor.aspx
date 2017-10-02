@@ -6,87 +6,355 @@
         Alta Proveedor
          <br />-----------------
     </p>
-    <asp:Panel ID="PanelAltaProveedor" runat="server">
+    <p>
+        &nbsp;</p>
+    <p>
+    </p>
+    <asp:Panel ID="PanelStep1" runat="server">
         <br />
-        <asp:Wizard ID="Wizard1" runat="server" ActiveStepIndex="1" BackColor="#E6E2D8" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" Height="673px" Width="935px">
-            <HeaderStyle BackColor="#666666" BorderColor="#E6E2D8" BorderStyle="Solid" BorderWidth="2px" Font-Bold="True" Font-Size="0.9em" ForeColor="White" HorizontalAlign="Left" VerticalAlign="Top" />
-            <NavigationButtonStyle BackColor="White" BorderColor="#C5BBAF" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#1C5E55" />
-            <SideBarButtonStyle ForeColor="White" />
-            <SideBarStyle BackColor="#1C5E55" Font-Size="0.9em" VerticalAlign="Top" />
-            <StepStyle BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderStyle="Solid" BorderWidth="2px" VerticalAlign="Top" />
-            <WizardSteps>
-                <asp:WizardStep runat="server" title="Step 1">
-                    Ingrese los datos del proveedor:<br />
-                    <br />
-                    <br />
-                    <br />
-                    RUT:<br />
-                    <asp:TextBox ID="TextBoxAltaUsuario" runat="server"></asp:TextBox>
-                    <br />
-                    Password:<br />
-                    <asp:TextBox ID="TextBoxAltaPass" runat="server"></asp:TextBox>
-                    <br />
-                    Nombre de Fantasia<br />
-                    <asp:TextBox ID="TextBoxNombreFantasia" runat="server"></asp:TextBox>
-                    <br />
-                    <br />
-                    ---<br />
-                    <br />
-                    Nombre Completo Persona Fisica<br />
-                    <asp:TextBox ID="TextBoxAltaNombreCompleto" runat="server"></asp:TextBox>
-                    <br />
-                    Email<br />
-                    <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
-                    <br />
-                    Telefono<br />
-                    <asp:TextBox ID="TextBoxTelefono" runat="server"></asp:TextBox>
-                    <br />
-                    Es VIP<br />
-                    <asp:DropDownList ID="DropDownListAltaVIP" runat="server" OnSelectedIndexChanged="DropDownListAltaVIP_SelectedIndexChanged">
-                        <asp:ListItem>Si</asp:ListItem>
+        <asp:HyperLink ID="HyperLink1" runat="server">1. Datos del Proveedor</asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink ID="HyperLink2" runat="server">2. Servicios del proveedor</asp:HyperLink>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        Ingrese los datos del proveedor:<br />
+        <br />
+        <br />
+        <br />
+        RUT:<br />
+        <asp:TextBox ID="TextBoxAltaUsuario" runat="server"></asp:TextBox>
+        <br />
+        Password:<br />
+        <asp:TextBox ID="TextBoxAltaPass" runat="server"></asp:TextBox>
+        <br />
+        Nombre de Fantasia<br />
+        <asp:TextBox ID="TextBoxNombreFantasia" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        ---<br />
+        <br />
+        Nombre Completo Persona Fisica<br />
+        <asp:TextBox ID="TextBoxAltaNombreCompleto" runat="server"></asp:TextBox>
+        <br />
+        Email<br />
+        <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
+        <br />
+        Telefono<br />
+        <asp:TextBox ID="TextBoxTelefono" runat="server"></asp:TextBox>
+        <br />
+        Es VIP<br />
+        <asp:DropDownList ID="DropDownListAltaVIP" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownListAltaVIP_SelectedIndexChanged">
+            <asp:ListItem>Si</asp:ListItem>
+            <asp:ListItem>No</asp:ListItem>
+        </asp:DropDownList>
+        <br />
+        <br />
+        <asp:Panel ID="PanelArancelVIP" runat="server">
+            Arancel VIP<br />
+            <asp:TextBox ID="TextBoxAltaArancelVIP" runat="server"></asp:TextBox>
+            <br />
+            <br />
+        </asp:Panel>
+        <br />
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Siguiente" />
+    </asp:Panel>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+    </p>
+    <asp:Panel ID="PanelStep2" runat="server">
+        <br />
+        <asp:HyperLink ID="HyperLink3" runat="server">1. Datos del Proveedor</asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink ID="HyperLink4" runat="server">2. Servicios del proveedor</asp:HyperLink>
+        <br />
+        <br />
+        <br />
+        <br />
+        Ingrese los servicios que ofrece el proveedor:<br />
+        <br />
+        <table id="Servicios">
+            <tr>
+                <td>Nombre Servicio</td>
+                <td>Descripcion</td>
+                <td>Adjuntar Imagen</td>
+                <td>Activar</td>
+            </tr>
+            <tr>
+                <td>Decoracion</td>
+                <td>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList1" runat="server">
                         <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
                     </asp:DropDownList>
-                    <br />
-                    <br />
-                    <asp:Panel ID="PanelArancelVIP" runat="server">
-                        Arancel VIP<br />
-                        <asp:TextBox ID="TextBoxAltaArancelVIP" runat="server"></asp:TextBox>
-                        <br />
-                        <br />
-                    </asp:Panel>
-                    <br />
-                </asp:WizardStep>
-                <asp:WizardStep runat="server" title="Step 2">
-                    Ingrese los servicios que ofrece el proveedor:<br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                </asp:WizardStep>
-            </WizardSteps>
-        </asp:Wizard>
+                </td>
+            </tr>
+            <tr>
+                <td>Salon de fiestas</td>
+                <td>
+                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload2" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Mobiliario</td>
+                <td>
+                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload3" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList3" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Banquetes</td>
+                <td>
+                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload4" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList4" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Candy Bar</td>
+                <td>
+                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload5" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList5" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Cupcakes</td>
+                <td>
+                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload6" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList6" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Fuente de chocolate</td>
+                <td>
+                    <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload7" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList7" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Fuente de queso</td>
+                <td>
+                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload8" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList8" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Mesa de dulces</td>
+                <td>
+                    <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload9" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList9" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Pasteles</td>
+                <td>
+                    <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload10" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList10" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Inflables</td>
+                <td>
+                    <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload11" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList11" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Globos</td>
+                <td>
+                    <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload12" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList12" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Invitaciones</td>
+                <td>
+                    <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload13" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList13" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Musica en vivo </td>
+                <td>
+                    <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload14" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList14" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Magos</td>
+                <td>
+                    <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload15" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList15" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Payasos</td>
+                <td>
+                    <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload16" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList16" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem>Si</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Menage</td>
+                <td>
+                    <asp:TextBox ID="TextBox17" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:FileUpload ID="FileUpload17" runat="server" />
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList17" runat="server">
+                        <asp:ListItem>No</asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+        </table>
         <br />
         <br />
         <br />
+        <asp:Button ID="Button2" runat="server" Text="Anterior" />
         <br />
         <asp:Button ID="ButtonAltaProveedor" runat="server" OnClick="ButtonAltaProveedor_Click" Text="Agregar nuevo Proveedor" />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
     </asp:Panel>
-    <p>
-    </p>
     <p>
     </p>
     <asp:Panel ID="PanelMensajeAlta" runat="server">

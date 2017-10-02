@@ -19,7 +19,7 @@ namespace Dominio
         public bool VIP { set; get; }
         public double ArancelVIP { set; get; }
         public bool Activo { set; get; }
-        public List<ServicioProveedor> ListaServicios { set; get; }
+        public List<ProveedorServicio> ListaServicios { set; get; }
         #endregion
 
         #region MÉTODOS
