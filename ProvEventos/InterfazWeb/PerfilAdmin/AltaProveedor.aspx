@@ -11,14 +11,9 @@
     <p>
     </p>
     <asp:Panel ID="PanelStep1" runat="server">
+        <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">1. Datos del Proveedor</asp:LinkButton>
         <br />
-        <asp:HyperLink ID="HyperLink1" runat="server">1. Datos del Proveedor</asp:HyperLink>
-        <br />
-        <br />
-        <asp:HyperLink ID="HyperLink2" runat="server">2. Servicios del proveedor</asp:HyperLink>
-        <br />
-        <br />
-        <br />
+        <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">2. Servicios del Proveedor</asp:LinkButton>
         <br />
         <br />
         <br />
@@ -63,7 +58,7 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Siguiente" />
+        <asp:Button ID="ButtonSiguiente" runat="server" Text="Siguiente" OnClick="ButtonSiguiente_Click" />
     </asp:Panel>
     <p>
         &nbsp;</p>
@@ -73,10 +68,9 @@
     </p>
     <asp:Panel ID="PanelStep2" runat="server">
         <br />
-        <asp:HyperLink ID="HyperLink3" runat="server">1. Datos del Proveedor</asp:HyperLink>
+        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">1. Datos del Proveedor</asp:LinkButton>
         <br />
-        <br />
-        <asp:HyperLink ID="HyperLink4" runat="server">2. Servicios del proveedor</asp:HyperLink>
+        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">2. Servicios del Proveedor</asp:LinkButton>
         <br />
         <br />
         <br />
@@ -349,7 +343,7 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="Button2" runat="server" Text="Anterior" />
+        <asp:Button ID="Button2" runat="server" Text="Anterior" OnClick="Button2_Click" />
         <br />
         <asp:Button ID="ButtonAltaProveedor" runat="server" OnClick="ButtonAltaProveedor_Click" Text="Agregar nuevo Proveedor" />
         <br />

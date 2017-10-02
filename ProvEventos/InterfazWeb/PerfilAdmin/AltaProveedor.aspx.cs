@@ -332,7 +332,7 @@ namespace InterfazWeb.PerfilAdmin
             List<ProveedorServicio> listaServicios = ObtenerListaServiciosProveedor();
             //Llamo al WCF
             ServiceClient mio = new ServiceClient();
-            bool exito = mio.WCFAddProveedor(nombreCompleto, usuario, password, nombreFantasia, email, telefono, esVIP, arancelVIP, listaServicios);
+            bool exito = true; //mio.WCFAddProveedor(nombreCompleto, usuario, password, nombreFantasia, email, telefono, esVIP, arancelVIP, listaServicios);
             if (exito)
             {
                 //Limpio los campos
@@ -383,6 +383,40 @@ namespace InterfazWeb.PerfilAdmin
             TextBoxAltaArancelVIP.Text = "";
         }
 
-    
+        protected void ButtonSiguiente_Click(object sender, EventArgs e)
+        {
+            PanelStep2.Visible = true;
+            PanelStep1.Visible = false;
+        }
+
+        protected void LinkButton4_Click(object sender, EventArgs e)
+        {
+            PanelStep1.Visible = false;
+            PanelStep2.Visible = true;
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            PanelStep1.Visible = true;
+            PanelStep2.Visible = false;
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            PanelStep1.Visible = true;
+            PanelStep2.Visible = false;
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            PanelStep2.Visible = true;
+            PanelStep1.Visible = false;
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            PanelStep1.Visible = true;
+            PanelStep2.Visible = false;
+        }
     }
 }
