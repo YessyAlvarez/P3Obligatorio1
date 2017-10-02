@@ -13,7 +13,7 @@ public interface IService
     List<Servicio> WCFAllServiciosWhitTipoEvento();
 
     [OperationContract]
-    bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP);
+    bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP, List<ProveedorServicio> listaServicios);
 
     [OperationContract]
     List<Proveedor> WCFShowAllProveedores();

@@ -29,6 +29,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TipoEvento" nillable="true" type="tns:TipoEvento" />
+  <xs:complexType name="ArrayOfProveedorServicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProveedorServicio" nillable="true" type="tns:ProveedorServicio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProveedorServicio" nillable="true" type="tns:ArrayOfProveedorServicio" />
+  <xs:complexType name="ProveedorServicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdProveedor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdServicio" type="xs:int" />
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProveedorServicio" nillable="true" type="tns:ProveedorServicio" />
   <xs:complexType name="ArrayOfProveedor">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Proveedor" nillable="true" type="tns:Proveedor" />
@@ -43,8 +59,9 @@
           <xs:element minOccurs="0" name="ArancelVIP" type="xs:double" />
           <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FechaRegistro" type="xs:dateTime" />
-          <xs:element minOccurs="0" name="ListaServicios" nillable="true" type="tns:ArrayOfServicioProveedor" />
+          <xs:element minOccurs="0" name="ListaServicios" nillable="true" type="tns:ArrayOfProveedorServicio" />
           <xs:element minOccurs="0" name="NombreFantasia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RUT" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="VIP" type="xs:boolean" />
         </xs:sequence>
@@ -94,19 +111,4 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="EnumPerfil" nillable="true" type="tns:EnumPerfil" />
-  <xs:complexType name="ArrayOfServicioProveedor">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServicioProveedor" nillable="true" type="tns:ServicioProveedor" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfServicioProveedor" nillable="true" type="tns:ArrayOfServicioProveedor" />
-  <xs:complexType name="ServicioProveedor">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Servicio" nillable="true" type="tns:Servicio" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ServicioProveedor" nillable="true" type="tns:ServicioProveedor" />
 </xs:schema>

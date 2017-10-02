@@ -24,6 +24,7 @@
         <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="esVIP" type="xs:boolean" />
         <xs:element minOccurs="0" name="valorArancelVIP" type="xs:double" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dominio" minOccurs="0" name="listaServicios" nillable="true" type="q2:ArrayOfProveedorServicio" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -42,7 +43,7 @@
   <xs:element name="WCFShowAllProveedoresResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dominio" minOccurs="0" name="WCFShowAllProveedoresResult" nillable="true" type="q2:ArrayOfProveedor" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dominio" minOccurs="0" name="WCFShowAllProveedoresResult" nillable="true" type="q3:ArrayOfProveedor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -56,7 +57,7 @@
   <xs:element name="WCFShowProveedorPorRUTResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dominio" minOccurs="0" name="WCFShowProveedorPorRUTResult" nillable="true" type="q3:Proveedor" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Dominio" minOccurs="0" name="WCFShowProveedorPorRUTResult" nillable="true" type="q4:Proveedor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

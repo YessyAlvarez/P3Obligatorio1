@@ -22,10 +22,10 @@ namespace InterfazWeb.ServiceReference1 {
         System.Threading.Tasks.Task<Dominio.Servicio[]> WCFAllServiciosWhitTipoEventoAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFAddProveedor", ReplyAction="http://tempuri.org/IService/WCFAddProveedorResponse")]
-        bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP);
+        bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP, Dominio.ProveedorServicio[] listaServicios);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFAddProveedor", ReplyAction="http://tempuri.org/IService/WCFAddProveedorResponse")]
-        System.Threading.Tasks.Task<bool> WCFAddProveedorAsync(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP);
+        System.Threading.Tasks.Task<bool> WCFAddProveedorAsync(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP, Dominio.ProveedorServicio[] listaServicios);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFShowAllProveedores", ReplyAction="http://tempuri.org/IService/WCFShowAllProveedoresResponse")]
         Dominio.Proveedor[] WCFShowAllProveedores();
@@ -93,12 +93,12 @@ namespace InterfazWeb.ServiceReference1 {
             return base.Channel.WCFAllServiciosWhitTipoEventoAsync();
         }
         
-        public bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP) {
-            return base.Channel.WCFAddProveedor(nombreCompletoProv, nombreUsuario, passw, nombreFantasia, email, telefono, esVIP, valorArancelVIP);
+        public bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP, Dominio.ProveedorServicio[] listaServicios) {
+            return base.Channel.WCFAddProveedor(nombreCompletoProv, nombreUsuario, passw, nombreFantasia, email, telefono, esVIP, valorArancelVIP, listaServicios);
         }
         
-        public System.Threading.Tasks.Task<bool> WCFAddProveedorAsync(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP) {
-            return base.Channel.WCFAddProveedorAsync(nombreCompletoProv, nombreUsuario, passw, nombreFantasia, email, telefono, esVIP, valorArancelVIP);
+        public System.Threading.Tasks.Task<bool> WCFAddProveedorAsync(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP, Dominio.ProveedorServicio[] listaServicios) {
+            return base.Channel.WCFAddProveedorAsync(nombreCompletoProv, nombreUsuario, passw, nombreFantasia, email, telefono, esVIP, valorArancelVIP, listaServicios);
         }
         
         public Dominio.Proveedor[] WCFShowAllProveedores() {

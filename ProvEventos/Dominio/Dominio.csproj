@@ -48,7 +48,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="ProvEventos.cs" />
     <Compile Include="Servicio.cs" />
-    <Compile Include="ServicioProveedor.cs" />
+    <Compile Include="ProveedorServicio.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

@@ -150,7 +150,9 @@
     <Content Include="theme\css\evento.css" />
     <Content Include="theme\css\login.css" />
     <Content Include="theme\img\login.jpg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bienvenidos\BienvenidoAdmin.aspx.cs">
@@ -249,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ImagenesProveedorServicio\" />
     <Folder Include="Models\" />
     <Folder Include="theme\fonts\" />
   </ItemGroup>

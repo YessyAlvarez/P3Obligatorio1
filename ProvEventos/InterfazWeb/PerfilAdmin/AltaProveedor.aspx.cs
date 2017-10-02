@@ -1,6 +1,5 @@
 ﻿using System;
 using Dominio;
-//using ServiciosWCF;
 using InterfazWeb.ServiceReference1;
 using System.Web.UI.WebControls;
 using System.Collections.Generic;
@@ -311,7 +310,6 @@ namespace InterfazWeb.PerfilAdmin
                 //Cargo el Objeto a la lista
                 resultado.Add(ps);
             }
-            
             return resultado;
         }
 
@@ -331,18 +329,10 @@ namespace InterfazWeb.PerfilAdmin
                 arancelVIP = Convert.ToDouble(TextBoxAltaArancelVIP.Text);
             }
             //Obtengo los datos de los servicios
-            List<ProveedorServicio> misServicios = ObtenerListaServiciosProveedor();
-            
-
-
-            
-
-
-
-
-
+            List<ProveedorServicio> listaServicios = ObtenerListaServiciosProveedor();
+            //Llamo al WCF
             ServiceClient mio = new ServiceClient();
-            bool exito = mio.WCFAddProveedor(nombreCompleto, usuario, password, nombreFantasia, email, telefono, esVIP, arancelVIP);
+            bool exito = mio.WCFAddProveedor(nombreCompleto, usuario, password, nombreFantasia, email, telefono, esVIP, arancelVIP, listaServicios);
             if (exito)
             {
                 //Limpio los campos

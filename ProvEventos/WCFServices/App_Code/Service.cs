@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using Dominio;
+using System.Collections.Generic;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
 public class Service : IService
 {
-    public bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP)
+    public bool WCFAddProveedor(string nombreCompletoProv, string nombreUsuario, string passw, string nombreFantasia, string email, string telefono, bool esVIP, double valorArancelVIP, List<ProveedorServicio> listadoServicios)
     {
         Proveedor p = new Proveedor
         {
@@ -19,7 +19,8 @@ public class Service : IService
             TipoPerfil = EnumPerfil.Proveedor,
             FechaRegistro = DateTime.Now,
             VIP = esVIP,
-            ArancelVIP = valorArancelVIP
+            ArancelVIP = valorArancelVIP,
+            ListaServicios = listadoServicios
         };
 
         return p.InsertarProveedor();

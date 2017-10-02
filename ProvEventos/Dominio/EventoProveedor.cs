@@ -11,7 +11,7 @@ namespace Dominio
         public int Puntaje { set; get; }
         public string Comentario { set; get; }
         public int ProveedorRUT { set; get; }
-        public List<ServicioProveedor> ListaServicios { set; get; }
+        public List<ProveedorServicio> ListaServicios { set; get; }
         public Organizador Organizador { set; get; }
         public Evento Evento { set; get; }
 
