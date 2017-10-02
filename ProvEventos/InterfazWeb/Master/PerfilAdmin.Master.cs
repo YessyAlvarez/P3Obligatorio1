@@ -81,5 +81,10 @@ namespace InterfazWeb.Master
             Response.Redirect("~/PerfilAdmin/CatalogoServicios.aspx");
 
         }
+
+        protected void LinkButtonGrabarProveedores_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/PerfilAdmin/GuardarEnTxt.aspx");
+        }
     }
 }

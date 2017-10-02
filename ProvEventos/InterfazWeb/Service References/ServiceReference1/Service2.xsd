@@ -106,4 +106,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="WCFGuardarTxtProveedores">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WCFGuardarTxtProveedoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WCFGuardarTxtProveedoresResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

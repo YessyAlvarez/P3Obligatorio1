@@ -1,6 +1,7 @@
 ﻿using System;
 using Dominio;
 using System.Collections.Generic;
+using System.IO;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
 public class Service : IService
@@ -59,10 +60,19 @@ public class Service : IService
          * **/
         return Proveedor.CambiarDatosProveedor(idProveedor, fechaIngreso, esVIP, valorArncelVIP);
     }
-
-
+    
     public bool WCFDesactivarProveedor(string rutProveedor)
     {
         return Proveedor.DesactivarProveedor(rutProveedor);
+    }
+
+    public bool WCFGuardarTxtProveedores() {
+        bool ret = false;
+        ProvEventos.generarTxtProveedores();
+        if (File.Exists(@"C:\Users\IEUser\Desktop\proveedores.txt"))
+        {
+            ret = true;
+        }
+        return ret;
     }
 }

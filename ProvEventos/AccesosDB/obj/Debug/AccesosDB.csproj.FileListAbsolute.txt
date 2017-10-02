@@ -1,5 +1,5 @@
-C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\GIT2\P3Obligatorio1\ProvEventos\AccesosDB\bin\Debug\AccesosDB.dll
-C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\GIT2\P3Obligatorio1\ProvEventos\AccesosDB\bin\Debug\AccesosDB.pdb
-C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\GIT2\P3Obligatorio1\ProvEventos\AccesosDB\obj\Debug\AccesosDB.csprojResolveAssemblyReference.cache
-C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\GIT2\P3Obligatorio1\ProvEventos\AccesosDB\obj\Debug\AccesosDB.dll
-C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\GIT2\P3Obligatorio1\ProvEventos\AccesosDB\obj\Debug\AccesosDB.pdb
+C:\Users\IEUser\Documents\ORT\P3\P3Obligatorio1\ProvEventos\AccesosDB\bin\Debug\AccesosDB.dll
+C:\Users\IEUser\Documents\ORT\P3\P3Obligatorio1\ProvEventos\AccesosDB\bin\Debug\AccesosDB.pdb
+C:\Users\IEUser\Documents\ORT\P3\P3Obligatorio1\ProvEventos\AccesosDB\obj\Debug\AccesosDB.csprojResolveAssemblyReference.cache
+C:\Users\IEUser\Documents\ORT\P3\P3Obligatorio1\ProvEventos\AccesosDB\obj\Debug\AccesosDB.dll
+C:\Users\IEUser\Documents\ORT\P3\P3Obligatorio1\ProvEventos\AccesosDB\obj\Debug\AccesosDB.pdb

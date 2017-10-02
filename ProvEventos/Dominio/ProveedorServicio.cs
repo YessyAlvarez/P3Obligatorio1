@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using AccesosDB;
+using System.Diagnostics;
 
 namespace Dominio
 {
@@ -14,5 +17,66 @@ namespace Dominio
         public string Descripcion { set; get; }
         public bool Activo { set; get; }
 
+        public static List<ProveedorServicio> traerServiciosProveedor(string rut) {
+            List<ProveedorServicio> ret = new List<ProveedorServicio>();
+            string consulta = @"SELECT * FROM Proveedor_Servicios where idProveedor = " + rut;
+            SqlConnection cn = Conexion.CrearConexion();
+            SqlCommand cmd = new SqlCommand(consulta, cn);
+            try
+            {
+                Conexion.AbrirConexion(cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ProveedorServicio s = new ProveedorServicio();
+                    s.IdProveedor = (string)dr["idProveedor"];
+                    s.IdServicio = (int)dr["idServicio"];
+                    s.Imagen = (string)dr["foto"];
+                    s.Descripcion = (string)dr["descripcion"];
+                    s.Activo = (bool)dr["Activo"];
+                    ret.Add(s);
+                }
+                dr.Close();
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                Debug.Assert(false, ex.Message);
+                return null;
+            }
+            finally
+            {
+                Conexion.CerrarConexion(cn);
+            }
+        }
+        public string NombreServicio() {
+            string ret = null;
+            string consulta = @"SELECT nombreServicio FROM Servicio where idServicio = " + this.IdServicio;
+            SqlConnection cn = Conexion.CrearConexion();
+            SqlCommand cmd = new SqlCommand(consulta, cn);
+            try
+            {
+                Conexion.AbrirConexion(cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if(dr.Read())
+                {
+                    ret = (string)dr["nombreServicio"];
+                }
+                dr.Close();
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                Debug.Assert(false, ex.Message);
+                return null;
+            }
+            finally
+            {
+                Conexion.CerrarConexion(cn);
+            }
+        }
+        public string ToString2() {
+            return this.NombreServicio() + ":" + this.Descripcion + ":" + this.Imagen + "#";
+        }
     }
 }
