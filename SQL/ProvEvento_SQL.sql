@@ -1,20 +1,19 @@
 create database ProvEvento;
+go
 use ProvEvento;
-
+go
 create table Usuario(
 	nombreUsuario VARCHAR(50) PRIMARY KEY NOT NULL,
 	password VARCHAR(50) NOT NULL,
 	nombreCompleto VARCHAR(50) NOT NULL,
 	tipoPerfil VARCHAR(1) NOT NULL, 	
 );
-
-SELECT * FROM Proveedor p, Usuario u WHERE p.idProveedor = u.nombreUsuario
-
+go
 INSERT INTO Usuario values('admin1', '202cb962ac59075b964b07152d234b70', ' Heber Gonzalez', 1);
 INSERT INTO Usuario values('admin2', '202cb962ac59075b964b07152d234b70', 'Pinion Arturo Fijo', 1);
 INSERT INTO Usuario values('20100510', '202cb962ac59075b964b07152d234b70', 'GauchitoDeOro', 2);
 INSERT INTO Usuario values('19920505', '202cb962ac59075b964b07152d234b70', 'Brihulu', 2);
-
+go
 create table Proveedor(
 	idProveedor VARCHAR(50) FOREIGN KEY REFERENCES Usuario,
 	nombreFantasia VARCHAR(50) NOT NULL,
@@ -27,15 +26,15 @@ create table Proveedor(
 	FOREIGN KEY(idProveedor) REFERENCES Usuario(nombreUsuario),
 	PRIMARY KEY(idProveedor)
 );
-
+go
 INSERT INTO Proveedor VALUES('20100510','GauchitoDeOro','confielgaucho@gmail.com','19900610','0303456', 1, 10, 1);
 INSERT INTO Proveedor VALUES('19920505','Brihulu','brisabel@hotmail.com','19871110','24019610', 0, 0, 1);
-
+go
 create table TipoEvento(
 	idEvento INTEGER PRIMARY KEY,
 	nombreEvento VARCHAR(50) UNIQUE NOT NULL
 );
-
+go
 INSERT INTO TipoEvento VALUES(1, 'Nacimientos');
 INSERT INTO TipoEvento VALUES(2, 'Cumpleaños');
 INSERT INTO TipoEvento VALUES(3, 'Casamientos');
@@ -53,13 +52,13 @@ INSERT INTO TipoEvento VALUES(14, 'Congresos');
 INSERT INTO TipoEvento VALUES(15, 'Ferias');
 INSERT INTO TipoEvento VALUES(16, 'Concursos');
 INSERT INTO TipoEvento VALUES(17, 'Conciertos');
-
+go
 create table Servicio(
 	idServicio INTEGER PRIMARY KEY,
 	nombreServicio VARCHAR(50) UNIQUE NOT NULL,
 	descripcion VARCHAR(50) NOT NULL
 );
-
+go
 INSERT INTO Servicio VALUES(1,'Decoracion','Se ofrece decoraciones tematicas');
 INSERT INTO Servicio VALUES(2,'Salon de fiestas','Distintas opciones de tamaño');
 INSERT INTO Servicio VALUES(3,'Mobiliario','Se ofrece ');
@@ -77,7 +76,7 @@ INSERT INTO Servicio VALUES(14,'Musica en vivo','Shows en vivo con musica y arti
 INSERT INTO Servicio VALUES(15,'Magos','Espectaculo de magos');
 INSERT INTO Servicio VALUES(16,'Payasos','Payasos');
 INSERT INTO Servicio VALUES(17,'Menage','Utileria y manteleria');
-
+go
 create table ServicioTipoEvento(
 	idServicio INTEGER,
 	idEvento INTEGER,
@@ -85,7 +84,7 @@ create table ServicioTipoEvento(
 	FOREIGN KEY(idServicio) REFERENCES Servicio(idServicio),
 	FOREIGN KEY(idEvento) REFERENCES TipoEvento(idEvento),
 );
-
+go
 INSERT INTO ServicioTipoEvento VALUES(1,1);
 INSERT INTO ServicioTipoEvento VALUES(1,9);
 INSERT INTO ServicioTipoEvento VALUES(1,10);
@@ -142,9 +141,7 @@ INSERT INTO ServicioTipoEvento VALUES(12,13);
 INSERT INTO ServicioTipoEvento VALUES(12,14);
 INSERT INTO ServicioTipoEvento VALUES(13,13);
 INSERT INTO ServicioTipoEvento VALUES(13,14);
-
-
-
+go
 create table Proveedor_Servicios(
 	idProveedor VARCHAR(50) NOT NULL,
 	idServicio INTEGER,
@@ -155,12 +152,25 @@ create table Proveedor_Servicios(
 	FOREIGN KEY(idServicio) REFERENCES Servicio(idServicio),
 	PRIMARY KEY(idProveedor,idServicio)
 );
-
-
-
+go
+insert into Proveedor_Servicios values('20100510',1,'foto1.jpg','Se ofrece decoraciones tematicas',1);
+insert into Proveedor_Servicios values('20100510',2,'foto2.jpg','Distintas opciones de tamaño',1);
+insert into Proveedor_Servicios values('20100510',3,'foto3.jpg','Se ofrece Mobiliario',1);
+insert into Proveedor_Servicios values('20100510',4,'foto4.jpg','Comida Gorumet',1);
+insert into Proveedor_Servicios values('20100510',5,'foto5.jpg','Muffins tematicos y de varios gustos',1);
+insert into Proveedor_Servicios values('20100510',6,'foto6.jpg','Deliciosa fuente de chocolate en varios tamaños',1);
+insert into Proveedor_Servicios values('19920505',7,'foto7.jpg','Deliciosa fuente de queso en varios tamaños',1);
+insert into Proveedor_Servicios values('19920505',8,'foto8.jpg','Se ofrece mesas decoradas de dulces',1);
+insert into Proveedor_Servicios values('19920505',9,'foto9.jpg','Distintos tipos de papeles',1);
+insert into Proveedor_Servicios values('19920505',10,'foto10.jpg','Castillos inflables',1);
+insert into Proveedor_Servicios values('19920505',11,'foto11.jpg','Globos, globos de helio',1);
+insert into Proveedor_Servicios values('19920505',12,'foto12.jpg','Postales, cartas, distintas formas de invitaciones',1);
+go
 create table ArancelAnualProveedor(
 	id INTEGER PRIMARY KEY,
 	arancel INTEGER NOT NULL
 );
-
+go
 INSERT INTO ArancelAnualProveedor VALUES(1,350);
+INSERT INTO ArancelAnualProveedor VALUES(2,360);
+INSERT INTO ArancelAnualProveedor VALUES(3,390);
