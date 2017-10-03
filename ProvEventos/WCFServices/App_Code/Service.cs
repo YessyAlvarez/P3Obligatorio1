@@ -79,4 +79,13 @@ public class Service : IService
         }
         return ret;
     }
+    public bool WCFGuardarTxtServicios() {
+        bool ret = false;
+        ProvEventos.generarTxtProveedores();
+        if (File.Exists(@"C:\Users\IEUser\Desktop\servicios.txt"))
+        {
+            ret = true;
+        }
+        return ret;
+    }
 }

@@ -36,6 +36,8 @@ public interface IService
     [OperationContract]
     bool WCFGuardarTxtProveedores();
 
+    [OperationContract]
+    bool WCFGuardarTxtServicios();
 
     // TODO: agregue aquí sus operaciones de servicio
 }

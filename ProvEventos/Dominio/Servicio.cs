@@ -115,7 +115,7 @@ namespace Dominio
         #endregion
 
         public string ToString2() {
-            return "";
+            return this.NombreServicio + "#";
         }
     }
 }

@@ -51,6 +51,12 @@ namespace InterfazWeb.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFChangeArancelAnualProveedor", ReplyAction="http://tempuri.org/IService/WCFChangeArancelAnualProveedorResponse")]
         System.Threading.Tasks.Task<bool> WCFChangeArancelAnualProveedorAsync(int arancel);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFObtenerArancelAnualProveedor", ReplyAction="http://tempuri.org/IService/WCFObtenerArancelAnualProveedorResponse")]
+        int WCFObtenerArancelAnualProveedor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFObtenerArancelAnualProveedor", ReplyAction="http://tempuri.org/IService/WCFObtenerArancelAnualProveedorResponse")]
+        System.Threading.Tasks.Task<int> WCFObtenerArancelAnualProveedorAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFDesactivarProveedor", ReplyAction="http://tempuri.org/IService/WCFDesactivarProveedorResponse")]
         bool WCFDesactivarProveedor(string rutProveedor);
         
@@ -62,6 +68,12 @@ namespace InterfazWeb.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFGuardarTxtProveedores", ReplyAction="http://tempuri.org/IService/WCFGuardarTxtProveedoresResponse")]
         System.Threading.Tasks.Task<bool> WCFGuardarTxtProveedoresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFGuardarTxtServicios", ReplyAction="http://tempuri.org/IService/WCFGuardarTxtServiciosResponse")]
+        bool WCFGuardarTxtServicios();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WCFGuardarTxtServicios", ReplyAction="http://tempuri.org/IService/WCFGuardarTxtServiciosResponse")]
+        System.Threading.Tasks.Task<bool> WCFGuardarTxtServiciosAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -139,6 +151,14 @@ namespace InterfazWeb.ServiceReference1 {
             return base.Channel.WCFChangeArancelAnualProveedorAsync(arancel);
         }
         
+        public int WCFObtenerArancelAnualProveedor() {
+            return base.Channel.WCFObtenerArancelAnualProveedor();
+        }
+        
+        public System.Threading.Tasks.Task<int> WCFObtenerArancelAnualProveedorAsync() {
+            return base.Channel.WCFObtenerArancelAnualProveedorAsync();
+        }
+        
         public bool WCFDesactivarProveedor(string rutProveedor) {
             return base.Channel.WCFDesactivarProveedor(rutProveedor);
         }
@@ -153,6 +173,14 @@ namespace InterfazWeb.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> WCFGuardarTxtProveedoresAsync() {
             return base.Channel.WCFGuardarTxtProveedoresAsync();
+        }
+        
+        public bool WCFGuardarTxtServicios() {
+            return base.Channel.WCFGuardarTxtServicios();
+        }
+        
+        public System.Threading.Tasks.Task<bool> WCFGuardarTxtServiciosAsync() {
+            return base.Channel.WCFGuardarTxtServiciosAsync();
         }
     }
 }

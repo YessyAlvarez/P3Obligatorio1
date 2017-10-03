@@ -43,6 +43,12 @@
   <wsdl:message name="IService_WCFChangeArancelAnualProveedor_OutputMessage">
     <wsdl:part name="parameters" element="tns:WCFChangeArancelAnualProveedorResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_WCFObtenerArancelAnualProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:WCFObtenerArancelAnualProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IService_WCFObtenerArancelAnualProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WCFObtenerArancelAnualProveedorResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_WCFDesactivarProveedor_InputMessage">
     <wsdl:part name="parameters" element="tns:WCFDesactivarProveedor" />
   </wsdl:message>
@@ -54,6 +60,12 @@
   </wsdl:message>
   <wsdl:message name="IService_WCFGuardarTxtProveedores_OutputMessage">
     <wsdl:part name="parameters" element="tns:WCFGuardarTxtProveedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_WCFGuardarTxtServicios_InputMessage">
+    <wsdl:part name="parameters" element="tns:WCFGuardarTxtServicios" />
+  </wsdl:message>
+  <wsdl:message name="IService_WCFGuardarTxtServicios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WCFGuardarTxtServiciosResponse" />
   </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="WCFAllServiciosWhitTipoEvento">
@@ -80,6 +92,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/WCFChangeArancelAnualProveedor" message="tns:IService_WCFChangeArancelAnualProveedor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/WCFChangeArancelAnualProveedorResponse" message="tns:IService_WCFChangeArancelAnualProveedor_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="WCFObtenerArancelAnualProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WCFObtenerArancelAnualProveedor" message="tns:IService_WCFObtenerArancelAnualProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WCFObtenerArancelAnualProveedorResponse" message="tns:IService_WCFObtenerArancelAnualProveedor_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="WCFDesactivarProveedor">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/WCFDesactivarProveedor" message="tns:IService_WCFDesactivarProveedor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/WCFDesactivarProveedorResponse" message="tns:IService_WCFDesactivarProveedor_OutputMessage" />
@@ -87,6 +103,10 @@
     <wsdl:operation name="WCFGuardarTxtProveedores">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/WCFGuardarTxtProveedores" message="tns:IService_WCFGuardarTxtProveedores_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/WCFGuardarTxtProveedoresResponse" message="tns:IService_WCFGuardarTxtProveedores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WCFGuardarTxtServicios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WCFGuardarTxtServicios" message="tns:IService_WCFGuardarTxtServicios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WCFGuardarTxtServiciosResponse" message="tns:IService_WCFGuardarTxtServicios_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -145,6 +165,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WCFObtenerArancelAnualProveedor">
+      <soap:operation soapAction="http://tempuri.org/IService/WCFObtenerArancelAnualProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WCFDesactivarProveedor">
       <soap:operation soapAction="http://tempuri.org/IService/WCFDesactivarProveedor" style="document" />
       <wsdl:input>
@@ -156,6 +185,15 @@
     </wsdl:operation>
     <wsdl:operation name="WCFGuardarTxtProveedores">
       <soap:operation soapAction="http://tempuri.org/IService/WCFGuardarTxtProveedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WCFGuardarTxtServicios">
+      <soap:operation soapAction="http://tempuri.org/IService/WCFGuardarTxtServicios" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

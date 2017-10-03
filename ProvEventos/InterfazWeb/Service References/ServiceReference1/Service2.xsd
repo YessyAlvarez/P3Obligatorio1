@@ -92,6 +92,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="WCFObtenerArancelAnualProveedor">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WCFObtenerArancelAnualProveedorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WCFObtenerArancelAnualProveedorResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="WCFDesactivarProveedor">
     <xs:complexType>
       <xs:sequence>
@@ -115,6 +127,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="WCFGuardarTxtProveedoresResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WCFGuardarTxtServicios">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WCFGuardarTxtServiciosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WCFGuardarTxtServiciosResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
