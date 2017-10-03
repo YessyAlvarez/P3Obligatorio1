@@ -30,11 +30,11 @@ namespace Dominio
                 while (dr.Read())
                 {
                     ProveedorServicio s = new ProveedorServicio();
-                    s.IdProveedor = (string)dr["idProveedor"];
-                    s.IdServicio = (int)dr["idServicio"];
-                    s.Imagen = (string)dr["foto"];
-                    s.Descripcion = (string)dr["descripcion"];
-                    s.Activo = (bool)dr["Activo"];
+                    s.IdProveedor = dr["idProveedor"].ToString();
+                    s.IdServicio = Convert.ToInt32(dr["idServicio"]);
+                    s.Imagen = dr["foto"].ToString();
+                    s.Descripcion = dr["descripcion"].ToString();
+                    s.Activo = dr["Activo"].Equals("1") ? true : false;
                     ret.Add(s);
                 }
                 dr.Close();
