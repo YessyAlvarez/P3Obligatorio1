@@ -18,12 +18,28 @@ namespace InterfazWeb.PerfilAdmin
 
         protected void ButtonProv_Click(object sender, EventArgs e)
         { 
-            miServicio.WCFGuardarTxtProveedores();
+            bool exito = miServicio.WCFGuardarTxtProveedores();
+            if (exito)
+            {
+                LabelMensaje.Text = "Archivo de Proveedores guardado con éxito.";
+            }
+            else
+            {
+                LabelMensaje.Text = "ERROR! No se pudo guardar el archivo de Proveedores.";
+            }
         }
 
         protected void ButtonEven_Click(object sender, EventArgs e)
         {
-            miServicio.WCFGuardarTxtServicios();
+            bool exito = miServicio.WCFGuardarTxtServicios();
+            if (exito)
+            {
+                LabelMensaje.Text = "Archivo de Servicios guardado con éxito.";
+            }
+            else
+            {
+                LabelMensaje.Text = "ERROR! No se pudo guardar el archivo de Servicios.";
+            }
         }
     }
 }

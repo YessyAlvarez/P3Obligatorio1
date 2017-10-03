@@ -2,11 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    Arancel Proveedores<br />
-    --------------------<asp:Panel ID="PanelValorActual" runat="server">
-        <p>
-            &nbsp;</p>
+    <br />
+    Arancel Proveedores
+    <br />
+    --------------------
+    <asp:Panel ID="PanelValorActual" runat="server">
         <p>
             El calor actual del arancel para proveedores es de&nbsp;
             <asp:TextBox ID="TextBoxValorArancel" runat="server"></asp:TextBox>
