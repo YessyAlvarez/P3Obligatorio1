@@ -351,6 +351,9 @@ namespace Dominio
         {
             return "Nombre: " + this.NombreApellido + " - Fecha Ingreso: " + FechaRegistro.ToShortDateString() + " - es VIP: " + (this.VIP ? "Sí" : "No");
         }
+        public string ToString2() {
+            return this.RUT + "#" + this.NombreFantasia + "#" + this.Email + "#" + this.Telefono + "|";
+        }
 
         #endregion
 

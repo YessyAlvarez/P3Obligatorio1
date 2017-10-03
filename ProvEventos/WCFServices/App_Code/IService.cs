@@ -30,6 +30,8 @@ public interface IService
     [OperationContract]
     bool WCFDesactivarProveedor(string rutProveedor);
 
+    [OperationContract]
+    bool WCFGuardarTxtProveedores();
 
 
     // TODO: agregue aquí sus operaciones de servicio

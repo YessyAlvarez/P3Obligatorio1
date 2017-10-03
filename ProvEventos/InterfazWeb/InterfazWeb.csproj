@@ -118,6 +118,7 @@
     <Content Include="PerfilAdmin\AltaProveedor.aspx" />
     <Content Include="PerfilAdmin\EditarProveedor.aspx" />
     <Content Include="PerfilAdmin\EliminarProveedor.aspx" />
+    <Content Include="PerfilAdmin\GuardarEnTxt.aspx" />
     <Content Include="Properties\DataSources\Dominio.Proveedor.datasource" />
     <Content Include="Properties\DataSources\Dominio.Servicio.datasource" />
     <None Include="Service References\ServiceReference1\Service.wsdl" />
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="PerfilAdmin\EliminarProveedor.aspx.designer.cs">
       <DependentUpon>EliminarProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilAdmin\GuardarEnTxt.aspx.cs">
+      <DependentUpon>GuardarEnTxt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilAdmin\GuardarEnTxt.aspx.designer.cs">
+      <DependentUpon>GuardarEnTxt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
