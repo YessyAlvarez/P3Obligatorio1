@@ -73,7 +73,7 @@ public class Service : IService
     public bool WCFGuardarTxtProveedores() {
         bool ret = false;
         ProvEventos.generarTxtProveedores();
-        if (File.Exists(@"C:\Users\IEUser\Desktop\proveedores.txt"))
+        if (File.Exists(@"C:\Users\Diseño\Desktop\proveedores.txt"))
         {
             ret = true;
         }
@@ -82,7 +82,7 @@ public class Service : IService
     public bool WCFGuardarTxtServicios() {
         bool ret = false;
         ProvEventos.generarTxtServicios();
-        if (File.Exists(@"C:\Users\IEUser\Desktop\servicios.txt"))
+        if (File.Exists(@"C:\Users\Diseño\Desktop\servicios.txt"))
         {
             ret = true;
         }

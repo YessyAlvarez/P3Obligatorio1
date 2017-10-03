@@ -172,5 +172,3 @@ create table ArancelAnualProveedor(
 );
 go
 INSERT INTO ArancelAnualProveedor VALUES(1,350);
-INSERT INTO ArancelAnualProveedor VALUES(2,360);
-INSERT INTO ArancelAnualProveedor VALUES(3,390);
