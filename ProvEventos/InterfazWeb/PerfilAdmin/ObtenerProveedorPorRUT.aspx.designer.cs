@@ -7,162 +7,153 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace InterfazWeb.Master {
+namespace InterfazWeb.PerfilAdmin {
     
     
-    public partial class PerfilAdmin {
+    public partial class ObtenerProveedorPorRUT {
         
         /// <summary>
-        /// Control head.
+        /// Control PanelBuscadorPorID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Panel PanelBuscadorPorID;
         
         /// <summary>
-        /// Control form1.
+        /// Control TextBoxIdBuscadorProveedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxIdBuscadorProveedor;
         
         /// <summary>
-        /// Control PanelOnlyLoginTrue.
+        /// Control ButtonBuscarProveedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelOnlyLoginTrue;
+        protected global::System.Web.UI.WebControls.Button ButtonBuscarProveedor;
         
         /// <summary>
-        /// Control lblNombreUsuario.
+        /// Control PanelDatosProveedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
+        protected global::System.Web.UI.WebControls.Panel PanelDatosProveedor;
         
         /// <summary>
-        /// Control LinkButtonSalir.
+        /// Control LabelRUT.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonSalir;
+        protected global::System.Web.UI.WebControls.Label LabelRUT;
         
         /// <summary>
-        /// Control PanelMenuLateral.
+        /// Control LabelNombreFantasia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelMenuLateral;
+        protected global::System.Web.UI.WebControls.Label LabelNombreFantasia;
         
         /// <summary>
-        /// Control LinkButtonABMOrganizador.
+        /// Control LabelNombreCompleto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonABMOrganizador;
+        protected global::System.Web.UI.WebControls.Label LabelNombreCompleto;
         
         /// <summary>
-        /// Control LinkButtonABMEvento.
+        /// Control LabelEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonABMEvento;
+        protected global::System.Web.UI.WebControls.Label LabelEmail;
         
         /// <summary>
-        /// Control LinkButtonABMServicio.
+        /// Control LabelFechaIngreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonABMServicio;
+        protected global::System.Web.UI.WebControls.Label LabelFechaIngreso;
         
         /// <summary>
-        /// Control LinkButtonABMProveedor.
+        /// Control LabelTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonABMProveedor;
+        protected global::System.Web.UI.WebControls.Label LabelTelefono;
         
         /// <summary>
-        /// Control LinkButtonCatalogoServicios.
+        /// Control LabelVIP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonCatalogoServicios;
+        protected global::System.Web.UI.WebControls.Label LabelVIP;
         
         /// <summary>
-        /// Control LinkButtonListadoProveedores.
+        /// Control LabelArancel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonListadoProveedores;
+        protected global::System.Web.UI.WebControls.Label LabelArancel;
         
         /// <summary>
-        /// Control LinkButtonObtenerProveedorPorRUT.
+        /// Control LabelActivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonObtenerProveedorPorRUT;
+        protected global::System.Web.UI.WebControls.Label LabelActivo;
         
         /// <summary>
-        /// Control LinkButtonListadoOrganizadores.
+        /// Control ButtonCerrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonListadoOrganizadores;
+        protected global::System.Web.UI.WebControls.Button ButtonCerrar;
         
         /// <summary>
-        /// Control LinkButtonEventosPorOrganizador.
+        /// Control PanelMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonEventosPorOrganizador;
+        protected global::System.Web.UI.WebControls.Panel PanelMensaje;
         
         /// <summary>
-        /// Control LinkButtonGrabarArchivo.
+        /// Control LabelMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonGrabarArchivo;
-        
-        /// <summary>
-        /// Control ContentPlaceHolder1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label LabelMensaje;
     }
 }

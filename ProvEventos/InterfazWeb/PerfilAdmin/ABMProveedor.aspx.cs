@@ -28,5 +28,10 @@ namespace InterfazWeb.PerfilAdmin
         {
             Response.Redirect("EliminarProveedor.aspx");
         }
+
+        protected void ButtonModArancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditarArancel.aspx");
+        }
     }
 }

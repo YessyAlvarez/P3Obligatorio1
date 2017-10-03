@@ -119,5 +119,18 @@ namespace InterfazWeb.PerfilAdmin
                 PanelArancelVIP.Visible = false;
             }
         }
+
+        protected void ButtonSeleccionarVIP_Click(object sender, EventArgs e)
+        {
+            bool esVIP = DropDownListVIP.SelectedValue.Equals("Si") ? true : false;
+            if (esVIP)
+            {
+                PanelArancelVIP.Visible = true;
+            }
+            else
+            {
+                PanelArancelVIP.Visible = false;
+            }
+        }
     }
 }

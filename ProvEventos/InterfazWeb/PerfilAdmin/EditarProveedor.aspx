@@ -8,7 +8,7 @@
         -----------------
     </p>
     <asp:Panel ID="PanelBuscadorPorID" runat="server">
-        Ingrese usuario proveedor<br />
+        Ingrese RUT de Proveedor<br />
         <asp:TextBox ID="TextBoxIdBuscadorProveedor" runat="server"></asp:TextBox>
         <br />
         <asp:Button ID="ButtonBuscarProveedor" runat="server" OnClick="ButtonBuscarProveedor_Click" Text="Buscar" />
@@ -28,7 +28,7 @@
             Email<br />
             <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
             <br />
-            Fecha de ingreso :
+            Fecha de ingreso:
             <asp:Label ID="LabelFechaIngreso" runat="server"></asp:Label>
             <br />
             Telefono<br />
@@ -39,6 +39,7 @@
                 <asp:ListItem>Si</asp:ListItem>
                 <asp:ListItem>No</asp:ListItem>
             </asp:DropDownList>
+            <asp:Button ID="ButtonSeleccionarVIP" runat="server" OnClick="ButtonSeleccionarVIP_Click" Text="Seleccionar" />
             <br />
             <asp:Panel ID="PanelArancelVIP" runat="server">
                 Arancel VIP<br />

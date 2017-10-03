@@ -103,6 +103,15 @@ namespace InterfazWeb.PerfilAdmin {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListVIP;
         
         /// <summary>
+        /// Control ButtonSeleccionarVIP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonSeleccionarVIP;
+        
+        /// <summary>
         /// Control PanelArancelVIP.
         /// </summary>
         /// <remarks>

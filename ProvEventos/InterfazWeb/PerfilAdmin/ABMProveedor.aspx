@@ -16,6 +16,9 @@
         <asp:Button ID="ButtonEliminarProveedor" runat="server" OnClick="ButtonEliminarProveedor_Click" Text="Eliminar Proveedor" />
     </p>
     <p>
+        <asp:Button ID="ButtonModArancel" runat="server" OnClick="ButtonModArancel_Click" Text="Modificar arancel" />
+    </p>
+    <p>
     </p>
     <p>
     </p>
