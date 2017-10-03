@@ -12,18 +12,13 @@ namespace InterfazWeb.PerfilAdmin
             if (!IsPostBack) {
                 PanelValorActual.Visible = true;
                 PanelMensaje.Visible = false;
-                
-                Proveedor.ArancelAnual = mio.WCFObtenerArancelAnualProveedor();
-            }
-            else
-            {
                 ObtenerArancel();
             }
         }
 
 
         protected void ObtenerArancel() {
-            TextBoxValorArancel.Text = Proveedor.ArancelAnual.ToString();
+            TextBoxValorArancel.Text = mio.WCFObtenerArancelAnualProveedor().ToString();
         }
 
         protected void ButtonGuardarArancel_Click(object sender, EventArgs e)
