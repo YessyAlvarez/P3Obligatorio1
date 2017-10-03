@@ -18,6 +18,7 @@ namespace Dominio
         public bool Activo { set; get; }
 
         public static List<ProveedorServicio> traerServiciosProveedor(string rut) {
+
             List<ProveedorServicio> ret = new List<ProveedorServicio>();
             string consulta = @"SELECT * FROM Proveedor_Servicios where idProveedor = '" + rut + "';";
             SqlConnection cn = Conexion.CrearConexion();
