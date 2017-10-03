@@ -22,7 +22,7 @@ namespace Dominio
         public List<ProveedorServicio> ListaServicios { set; get; }
         #endregion
 
-        #region MÉTODOS
+        #region cambiar arancel anual
         public static bool ChangeArancel(int nuevoArancel)
         {
             SqlConnection cn = Conexion.CrearConexion();
@@ -65,7 +65,9 @@ namespace Dominio
 
         }
 
+        #endregion
 
+        #region obtener arancel
         public static int ObtenerArancel()
         {
             int arancel = 0;
@@ -93,8 +95,9 @@ namespace Dominio
                 Conexion.CerrarConexion(cn);
             }
         }
+        #endregion
 
-
+        #region agregar proveedor
         public bool InsertarProveedor()
         {
             SqlConnection cn = Conexion.CrearConexion();
@@ -171,7 +174,9 @@ namespace Dominio
             }
         }
 
+        #endregion
 
+        #region Obtener todos los proveedores activos
         public static List<Proveedor> ObtenerAllProveedores()
         {
 
@@ -189,10 +194,8 @@ namespace Dominio
                 while (dr.Read())
                 {
                     Proveedor p = CargarDatosDesdeReader(dr);
-                    if (p.Activo)
-                    {
-                        lista.Add(p);
-                    }
+                    p.ListaServicios = ProveedorServicio.traerServiciosProveedor(p.RUT);
+                    lista.Add(p);
                 }
                 dr.Close();
                 return lista;
@@ -208,9 +211,9 @@ namespace Dominio
             }
 
         }
+        #endregion
 
-
-
+        #region cargar datos Proveedor desde la base
         protected static Proveedor CargarDatosDesdeReader(IDataRecord fila)
         {
             Proveedor proveedor = null;
@@ -234,6 +237,9 @@ namespace Dominio
             return proveedor;
         }
 
+        #endregion
+        
+        #region Obtener proveedor por su RUT
         public static Proveedor ObtenerProveedorPorRUT(string unRUT)
         {
             string consulta = @"SELECT * FROM Proveedor p, Usuario u WHERE u.nombreUsuario='" + unRUT + "' AND u.nombreUsuario=p.idProveedor;";
@@ -248,11 +254,8 @@ namespace Dominio
                 while (dr.Read())
                 {
                     Proveedor p = CargarDatosDesdeReader(dr);
-                    if (p.Activo)
-                    {
-                        unProveedor = p;
-                    }
-
+                    p.ListaServicios = ProveedorServicio.traerServiciosProveedor(p.RUT);
+                    unProveedor = p;
                 }
                 dr.Close();
                 return unProveedor;
@@ -267,8 +270,9 @@ namespace Dominio
                 Conexion.CerrarConexion(cn);
             }
         }
-
-
+        #endregion
+        
+        #region desactivar proveedor
         public static bool DesactivarProveedor(string rutProveedor)
         {
 
@@ -316,14 +320,11 @@ namespace Dominio
             {
                 Conexion.CerrarConexion(cn);
             }
-
-
-
+            
         }
-
-
-
-
+        #endregion
+        
+        #region modificar datos proveedor
         public static bool CambiarDatosProveedor(string idProveedor, DateTime fechaIngreso, bool esVIP, double valorArncelVIP)
         {
 
@@ -369,11 +370,7 @@ namespace Dominio
                 Conexion.CerrarConexion(cn);
             }
         }
-
-
-
-
-
+        
         #endregion
 
         #region TOSTRING
@@ -385,9 +382,7 @@ namespace Dominio
         {
             return this.RUT + "#" + this.NombreFantasia + "#" + this.Email + "#" + this.Telefono + "|";
         }
-
         #endregion
-
-
+        
     }
 }

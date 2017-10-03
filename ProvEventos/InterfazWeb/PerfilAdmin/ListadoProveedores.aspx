@@ -7,10 +7,11 @@
     <asp:Panel ID="PanelSeleccionProveedor" runat="server">
         <br />
         Seleccione un proveedor para visualizar todos sus datos<br />
-        <asp:DropDownList ID="DropDownListAllProveedores" runat="server">
+        <asp:DropDownList ID="DropDownListAllProveedores" runat="server" DataTextField="NombreFantasia" DataValueField="RUT">
         </asp:DropDownList>
         <br />
-        <asp:Button ID="ButtonProveedorSeleccionado" runat="server" Text="Seleccionar" />
+        <asp:Button ID="ButtonProveedorSeleccionado" runat="server" Text="Seleccionar" OnClick="ButtonProveedorSeleccionado_Click" />
+        <br />
         <br />
     </asp:Panel>
     <p>
@@ -18,31 +19,39 @@
     <asp:Panel ID="PanelDatosProveedorSeleccionado" runat="server">
         <br />
         Datos del Proveedor:
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="LabelRUT" runat="server"></asp:Label>
         <br />
         <br />
-        idProveedor&nbsp;
+        Nombre Fantasía:&nbsp;
+        <asp:Label ID="LabelNombreFantasia" runat="server"></asp:Label>
         <br />
-        nombreFantasia
+        Email :
+        <asp:Label ID="LabelEmail" runat="server"></asp:Label>
         <br />
-        email
+        Fecha de Ingreso:
+        <asp:Label ID="LabelFechaIngreso" runat="server"></asp:Label>
         <br />
-        fechaIngreso
+        Teléfono:
+        <asp:Label ID="LabelTelefono" runat="server"></asp:Label>
         <br />
-        telefono
+        VIP:
+        <asp:Label ID="LabelVIP" runat="server"></asp:Label>
         <br />
-        VIP
+        Arancel VIP:&nbsp;
+        <asp:Label ID="LabelArancelVIP" runat="server"></asp:Label>
         <br />
-        arancelVIP
-        <br />
-        activo
+        Activo:
+        <asp:Label ID="LabelActivo" runat="server"></asp:Label>
         <br />
         <br />
         Listado de Servicios que ofrece:<br />
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="GridViewServiciosProveedor" runat="server">
         </asp:GridView>
+        <asp:Label ID="LabelSinServicios" runat="server"></asp:Label>
         <br />
         <br />
+        <br />
+        <asp:Button ID="ButtonCerrar" runat="server" Text="Cerrar" />
         <br />
         <br />
     </asp:Panel>
