@@ -150,6 +150,7 @@
     </None>
     <Content Include="theme\css\evento.css" />
     <Content Include="theme\css\login.css" />
+    <Content Include="theme\img\bg-admin.jpg" />
     <Content Include="theme\img\login.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

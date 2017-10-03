@@ -14,7 +14,7 @@
         <asp:Panel ID="PanelOnlyLoginTrue" runat="server">
             <header>
                 <div id="HeadAdmin">
-                    <img src="../theme/img/admin.jpg" style="width:100%;"/>
+                    <img src="../theme/img/bg-admin.jpg" style="width:100%;"/>
                     <div class="isLoginTrue">
                         <span style="text-align: left;float:left;">
                             Bienvenido 
