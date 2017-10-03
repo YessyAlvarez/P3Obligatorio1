@@ -71,7 +71,7 @@ namespace Dominio
         public static List<TipoEvento> FindTipoEventoFroServicio(int idServicio)
         {
             SqlConnection cn = Conexion.CrearConexion();
-            SqlCommand cmd = new SqlCommand("SELECT te.idEvento, te.nombreEvento, te.descripcion FROM ServicioTipoEvento ste ,TipoEvento te WHERE ste.idServicio=" + idServicio + " AND ste.idEvento=te.idEvento", cn);
+            SqlCommand cmd = new SqlCommand("SELECT te.idEvento, te.nombreEvento, s.descripcion FROM ServicioTipoEvento ste ,TipoEvento te, Servicio s WHERE ste.idServicio=" + idServicio + " AND ste.idEvento=te.idEvento AND s.idServicio = ste.idServicio", cn);
             try
             {
                 cn.Open();
