@@ -332,7 +332,7 @@ namespace InterfazWeb.PerfilAdmin
             List<ProveedorServicio> listaServicios = ObtenerListaServiciosProveedor();
             //Llamo al WCF
             ServiceClient mio = new ServiceClient();
-            bool exito = true; //mio.WCFAddProveedor(nombreCompleto, usuario, password, nombreFantasia, email, telefono, esVIP, arancelVIP, listaServicios);
+            bool exito = mio.WCFAddProveedor(nombreCompleto, usuario, password, nombreFantasia, email, telefono, esVIP, arancelVIP, listaServicios.ToArray());
             if (exito)
             {
                 //Limpio los campos

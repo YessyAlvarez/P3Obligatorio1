@@ -59,12 +59,12 @@
         </p>
     
         </asp:Panel>
-
-
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
+<div class="body">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
         </asp:ContentPlaceHolder>
-   
+   </div>
     </form>
     <style>
         body {
@@ -73,54 +73,38 @@
             margin: 0;
             height: 100%;
         }
+        .body {
+            width: 70%;float: left;
+        }
         .SeñaAPagar {
             background-color: #d1d1d1;
         }
+
         #HeadAdmin {
             position: relative;
             margin: 0;
             padding: 0;
-            width: 100%;
-            float: left;
-            
         }
+
             #HeadAdmin img {
                 width: 100%;
+                max-width: 100%;
             }
+
         .isLoginTrue {
             width: 96%;
-            margin: 1% 2%;
+            float: left;
             background: #DDDDDD;
+            padding: 1% 2%;
         }
         #PanelMenuLateral {
-            background-color:#F1F1F1;
-            width: 25%; 
+            margin: 0 2% 0 0;
+            width: 25%;
             float: left;
+            background: #EEEEEE;
         }
-            #PanelMenuLateral p {
-                padding: 2%;
-                margin: 0;
-                width: 100%;
-                float: left;
-                
-            }
-            #PanelMenuLateral p a {
-                text-decoration: none;
-                font-size: 16px;
-                color: blue;  
-                border-bottom: #cccccc; 
-            }
-            #PanelMenuLateral p a:hover {
-                text-decoration: none;
-                color: white;
-                background-color: #333333; 
-            }
-        #PanelContenido {
-            width: 73%;
-            float: left;
-            margin-left: 2%;
-            background-color: #FFFFFF;
-        }
+
+
     </style>
 </body>
 </html>

@@ -100,11 +100,28 @@ namespace Dominio
                 cmd.Parameters.Add(new SqlParameter("@vip", this.VIP));
                 cmd.Parameters.Add(new SqlParameter("@arancelVIP", this.ArancelVIP));
                 cmd.Parameters.Add(new SqlParameter("@activo", 1));
-                //cmd.Connection = cn;
 
-                int filasAfectadas = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                int filasAfectadas = 0;
+                for (int i=0; i<this.ListaServicios.Count; i++)
+                {
+                    ProveedorServicio ps = ListaServicios[i];
+                    if (ps != null)
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.CommandText = @"INSERT INTO Proveedor_Servicios VALUES(@idprov,@idServ,@foto,@desc,@activo)";
 
-                if (filasAfectadas == 1)
+                        cmd.Parameters.Add(new SqlParameter("@idprov", ps.IdProveedor));
+                        cmd.Parameters.Add(new SqlParameter("@idServ", ps.IdServicio));
+                        cmd.Parameters.Add(new SqlParameter("@foto", ps.Imagen));
+                        cmd.Parameters.Add(new SqlParameter("@desc", ps.Descripcion));
+                        cmd.Parameters.Add(new SqlParameter("@activo", 1));
+                        filasAfectadas += cmd.ExecuteNonQuery();
+                    }
+                }
+                
+
+                if (filasAfectadas == this.ListaServicios.Count)
                 {
                     trn.Commit();
                     return true;
