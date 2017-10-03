@@ -25,9 +25,7 @@ namespace Dominio
         #region MÉTODOS
         public static bool ChangeArancel(int nuevoArancel)
         {
-
             SqlConnection cn = Conexion.CrearConexion();
-
             SqlCommand cmd = new SqlCommand();
             SqlTransaction trn = null;
             cmd.CommandText = @"UPDATE ArancelAnualProveedor SET arancel=@newArancel WHERE id=1;";
@@ -68,6 +66,35 @@ namespace Dominio
         }
 
 
+        public static int ObtenerArancel()
+        {
+            int arancel = 0;
+            string consulta = @"SELECT arancel FROM ArancelAnualProveedor WHERE id=1;";
+            SqlConnection cn = Conexion.CrearConexion();
+            SqlCommand cmd = new SqlCommand(consulta, cn);
+            try
+            {
+                Conexion.AbrirConexion(cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    arancel = Convert.ToInt32(dr["arancel"]);
+                }
+                dr.Close();
+                return arancel;
+            }
+            catch (Exception ex)
+            {
+                Debug.Assert(false, ex.Message);
+                return arancel;
+            }
+            finally
+            {
+                Conexion.CerrarConexion(cn);
+            }
+        }
+
+
         public bool InsertarProveedor()
         {
             SqlConnection cn = Conexion.CrearConexion();
@@ -103,7 +130,7 @@ namespace Dominio
 
                 cmd.ExecuteNonQuery();
                 int filasAfectadas = 0;
-                for (int i=0; i<this.ListaServicios.Count; i++)
+                for (int i = 0; i < this.ListaServicios.Count; i++)
                 {
                     ProveedorServicio ps = ListaServicios[i];
                     if (ps != null)
@@ -119,7 +146,7 @@ namespace Dominio
                         filasAfectadas += cmd.ExecuteNonQuery();
                     }
                 }
-                
+
 
                 if (filasAfectadas == this.ListaServicios.Count)
                 {
@@ -166,7 +193,6 @@ namespace Dominio
                     {
                         lista.Add(p);
                     }
-
                 }
                 dr.Close();
                 return lista;
@@ -210,8 +236,7 @@ namespace Dominio
 
         public static Proveedor ObtenerProveedorPorRUT(string unRUT)
         {
-            string consulta = @"SELECT Usuario.nombreCompleto, Proveedor.fechaIngreso, Proveedor.VIP, Proveedor.arancelVIP, Proveedor.activo 
-                                FROM Proveedor, Usuario WHERE Usuario.nombreUsuario='" + unRUT + "' AND Usuario.idUsuario=Proveedor.idProveedor;";
+            string consulta = @"SELECT * FROM Proveedor p, Usuario u WHERE u.nombreUsuario='" + unRUT + "' AND u.nombreUsuario=p.idProveedor;";
 
             SqlConnection cn = Conexion.CrearConexion();
             Proveedor unProveedor = null;
@@ -260,11 +285,11 @@ namespace Dominio
                 Conexion.AbrirConexion(cn);
                 trn = cn.BeginTransaction();
                 cmd.Transaction = trn;
-                int ultimoId = (int)cmd.ExecuteScalar();
+                cmd.ExecuteNonQuery();
 
                 //Debo verificar que al dar de baja un proveedor debo de dar de baja tambien todos los servicios que este ofrece
                 cmd.Parameters.Clear();
-                cmd.CommandText = @"UPDATE ProveedorServicios SET activo=0 WHERE idProveedor=@idProv;";
+                cmd.CommandText = @"UPDATE Proveedor_Servicios SET activo=0 WHERE idProveedor=@idProv;";
                 cmd.Parameters.Add(new SqlParameter("@idProv", rutProveedor));
 
                 //Ejecuto la consulta
@@ -356,7 +381,8 @@ namespace Dominio
         {
             return "Nombre: " + this.NombreApellido + " - Fecha Ingreso: " + FechaRegistro.ToShortDateString() + " - es VIP: " + (this.VIP ? "Sí" : "No");
         }
-        public string ToString2() {
+        public string ToString2()
+        {
             return this.RUT + "#" + this.NombreFantasia + "#" + this.Email + "#" + this.Telefono + "|";
         }
 

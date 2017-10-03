@@ -157,3 +157,10 @@ create table Proveedor_Servicios(
 );
 
 
+
+create table ArancelAnualProveedor(
+	id INTEGER PRIMARY KEY,
+	arancel INTEGER NOT NULL
+);
+
+INSERT INTO ArancelAnualProveedor VALUES(1,350);

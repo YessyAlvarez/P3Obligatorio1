@@ -32,6 +32,10 @@ public class Service : IService
         return Proveedor.ChangeArancel(arancel);
     }
 
+    public int WCFObtenerArancelAnualProveedor()
+    {
+        return Proveedor.ObtenerArancel();
+    }
 
     public List<Servicio> WCFAllServiciosWhitTipoEvento()
     {

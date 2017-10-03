@@ -28,6 +28,9 @@ public interface IService
     bool WCFChangeArancelAnualProveedor(int arancel);
 
     [OperationContract]
+    int WCFObtenerArancelAnualProveedor();
+
+    [OperationContract]
     bool WCFDesactivarProveedor(string rutProveedor);
 
     [OperationContract]
