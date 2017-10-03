@@ -74,27 +74,24 @@ namespace Dominio
             tw.Close();
         }
         public static void generarTxtServicios() {
-       /*     List<Servicio> servicios = Servicio.ObtenerServiciosConTipoEvento();
-
+            List<Servicio> servicios = Servicio.ObtenerServiciosConTipoEvento();
             //Crear o reemplazar el archivo
-            string path = @"C:\Users\IEUser\Desktop\proveedores.txt";
-            if (File.Exists(path))
+            string path = @"C:\Users\IEUser\Desktop\servicios.txt";
+            if (File.Exists(path)) 
             {
                 File.Delete(path);
             }
-            File.Create(path);
+            File.Create(path).Close();
             TextWriter tw = new StreamWriter(path);
-           
+            foreach (Servicio s in servicios) {
                 string textoArchivo = null;
                 textoArchivo += s.ToString2();
-            
+                foreach (TipoEvento e in s.ListaEventos) {
+                    textoArchivo += e.ToString2();
+                }
                 tw.WriteLine(textoArchivo);
             }
             tw.Close();
-            foreach (Servicio s in servicios) {
-
-            }
-            */
         }
     }
 }

@@ -24,7 +24,9 @@ namespace Dominio
         {
             return this.Nombre;
         }
-
+        public string ToString2() {
+            return this.Nombre + ":";
+        }
         #endregion
     }
 }
