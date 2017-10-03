@@ -16,7 +16,9 @@
     </asp:Panel>
     <p>
     </p>
+    
     <asp:Panel ID="PanelDatosProveedorSeleccionado" runat="server">
+        <div class="seleccionadoProveedor">
         <br />
         Datos del Proveedor:
         <asp:Label ID="LabelRUT" runat="server"></asp:Label>
@@ -51,18 +53,23 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="ButtonCerrar" runat="server" Text="Cerrar" />
+        <asp:Button ID="ButtonCerrar" runat="server" Text="Cerrar" OnClick="ButtonCerrar_Click" />
         <br />
         <br />
+        </div>
     </asp:Panel>
+    
     <p>
     </p>
     <p>
     </p>
 
-
-
-
-
+    <style>
+        .seleccionadoProveedor {
+            width: 90%;
+            border: 1px solid #eeeeee;
+            padding: 1%;
+        }
+    </style>
 
 </asp:Content>

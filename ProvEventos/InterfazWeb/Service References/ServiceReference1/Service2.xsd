@@ -65,9 +65,12 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="idProveedor" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="fechaIngreso" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="nombreCompleto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreFantasia" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="telefono" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="esVIP" type="xs:boolean" />
-        <xs:element minOccurs="0" name="valorArncelVIP" type="xs:double" />
+        <xs:element minOccurs="0" name="arancelVIP" type="xs:double" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

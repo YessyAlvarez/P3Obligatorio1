@@ -48,7 +48,7 @@ namespace Dominio
             List<Proveedor> proveedores = Proveedor.ObtenerAllProveedores();
 
             //Crear o reemplazar el archivo
-            string path = @"C:\Users\IEUser\Desktop\proveedores.txt";
+            string path = @"C:\Users\Diseño\Desktop\proveedores.txt";
             if (File.Exists(path)) {
                 File.Delete(path);
             }
@@ -76,7 +76,7 @@ namespace Dominio
         public static void generarTxtServicios() {
             List<Servicio> servicios = Servicio.ObtenerServiciosConTipoEvento();
             //Crear o reemplazar el archivo
-            string path = @"C:\Users\IEUser\Desktop\servicios.txt";
+            string path = @"C:\Users\Diseño\Desktop\servicios.txt";
             if (File.Exists(path)) 
             {
                 File.Delete(path);

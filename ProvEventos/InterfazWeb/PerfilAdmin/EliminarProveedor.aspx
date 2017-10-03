@@ -19,30 +19,32 @@
     <p>
     </p>
     <asp:Panel ID="PanelDatosProveedor" runat="server">
-        <br />
-        Nombre completo:
-        <asp:Label ID="LabelNombre" runat="server" Text="Label"></asp:Label>
-        <br />
-        Fecha Ingreso:
-        <asp:Label ID="LabelFechaIngreso" runat="server" Text="Label"></asp:Label>
-        <br />
-        VIP:
-        <asp:Label ID="LabelVIP" runat="server" Text="Label"></asp:Label>
-        <br />
-        Arancel VIP:
-        <asp:Label ID="LabelArancel" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
-        <br />
-        ¿Seguro decea eliminar este proveedor?<br />
-        <br />
-        <asp:Button ID="ButtonEliminarProveedor" runat="server" Text="Eliminar" OnClick="ButtonEliminarProveedor_Click" />
-        <br />
-        <br />
-        <asp:Button ID="ButtonCancelar" runat="server" Text="Cancelar" OnClick="ButtonCancelar_Click" />
-        <br />
-        <br />
-        <br />
+        <div class="seleccionadoProveedor">
+            <br />
+            Nombre completo:
+            <asp:Label ID="LabelNombre" runat="server" Text="Label"></asp:Label>
+            <br />
+            Fecha Ingreso:
+            <asp:Label ID="LabelFechaIngreso" runat="server" Text="Label"></asp:Label>
+            <br />
+            VIP:
+            <asp:Label ID="LabelVIP" runat="server" Text="Label"></asp:Label>
+            <br />
+            Arancel VIP:
+            <asp:Label ID="LabelArancel" runat="server" Text="Label"></asp:Label>
+            <br />
+            <br />
+            <br />
+            ¿Seguro decea eliminar este proveedor?<br />
+            <br />
+            <asp:Button ID="ButtonEliminarProveedor" runat="server" Text="Eliminar" OnClick="ButtonEliminarProveedor_Click" />
+            <br />
+            <br />
+            <asp:Button ID="ButtonCancelar" runat="server" Text="Cancelar" OnClick="ButtonCancelar_Click" />
+            <br />
+            <br />
+            <br />
+        </div>
     </asp:Panel>
     <p>
     </p>
@@ -63,4 +65,16 @@
     </p>
     <p>
     </p>
+
+
+    <style>
+        .seleccionadoProveedor {
+            width: 90%;
+            border: 1px solid #eeeeee;
+            padding: 1%;
+        }
+    </style>
+
+
+
 </asp:Content>

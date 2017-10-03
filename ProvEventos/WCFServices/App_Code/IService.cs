@@ -22,8 +22,8 @@ public interface IService
     Proveedor WCFShowProveedorPorRUT(string nombreRUT);
 
     [OperationContract]
-    bool WCFChangeDatosProveedor(string idProveedor, DateTime fechaIngreso, bool esVIP, double valorArncelVIP);
-
+    bool WCFChangeDatosProveedor(string idProveedor, string nombreCompleto, string nombreFantasia, string email, string telefono, bool esVIP, double arancelVIP);
+        
     [OperationContract]
     bool WCFChangeArancelAnualProveedor(int arancel);
 

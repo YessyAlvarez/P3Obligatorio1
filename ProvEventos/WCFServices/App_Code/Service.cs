@@ -56,13 +56,13 @@ public class Service : IService
         return proveedor;
     }
 
-    public bool WCFChangeDatosProveedor(string idProveedor, DateTime fechaIngreso, bool esVIP, double valorArncelVIP)
+    public bool WCFChangeDatosProveedor(string idProveedor, string nombreCompleto, string nombreFantasia, string email, string telefono, bool esVIP, double arancelVIP)
     {
         /**
          * 1º - Mando a guardar los datos modificados (todos con/sin modificar) a la base
          * retorno true o false dependiendo el éxito de la operación
          * **/
-        return Proveedor.CambiarDatosProveedor(idProveedor, fechaIngreso, esVIP, valorArncelVIP);
+        return Proveedor.CambiarDatosProveedor(idProveedor, nombreCompleto, nombreFantasia, email, telefono, esVIP, arancelVIP);
     }
     
     public bool WCFDesactivarProveedor(string rutProveedor)

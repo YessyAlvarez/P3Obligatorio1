@@ -25,9 +25,19 @@ namespace InterfazWeb.PerfilAdmin
             string idProveedor = TextBoxIdBuscadorProveedor.Text;
             Proveedor proveedor = miServicio.WCFShowProveedorPorRUT(idProveedor);
             if (proveedor != null){
+                //Muestro los paneles
+                PanelBuscadorPorID.Visible = true;
+                PanelResultadoProveedor.Visible = true;
+                PanelMensaje.Visible = false;
+                //Cargo los datos
                 cargarDatosProveedor(proveedor);
             }
             else{
+                //Muestro los paneles
+                PanelBuscadorPorID.Visible = true;
+                PanelResultadoProveedor.Visible = false;
+                PanelMensaje.Visible = true;
+                //Cargo el mensaje
                 string mensaje = "No existe un proveedor con ese RUT.";
                 showMensaje(mensaje);
             }
@@ -36,8 +46,11 @@ namespace InterfazWeb.PerfilAdmin
         protected void cargarDatosProveedor(Proveedor proveedor)
         {
             TextBoxNombreCompleto.Text = proveedor.NombreApellido;
-            TextBoxContrasenia.Text = proveedor.Password;
-            TextBoxFechaIngreso.Text = proveedor.FechaRegistro.ToShortDateString();
+            TextBoxNameFantasia.Text = proveedor.NombreFantasia;
+            TextBoxEmail.Text = proveedor.Email;
+            LabelFechaIngreso.Text = proveedor.FechaRegistro.ToShortDateString();
+            TextBoxTelefono.Text = proveedor.Telefono;
+            LabelActivo.Text = proveedor.Activo ? "Si" : "No";
             DropDownListVIP.SelectedValue = proveedor.VIP?"Si":"No";
             if (proveedor.VIP)
             {
@@ -65,15 +78,16 @@ namespace InterfazWeb.PerfilAdmin
             //Obtengo los datos
 			string idProveedor = TextBoxIdBuscadorProveedor.Text;
             string nombreCompleto = TextBoxNombreCompleto.Text;
-            string contrasenia = TextBoxContrasenia.Text;
-            DateTime fechaIngreso = new DateTime(Convert.ToInt32(TextBoxFechaIngreso.Text));
-            bool esVIP = DropDownListVIP.SelectedIndex.Equals("Si")?true:false;
+            string nombreFantasia = TextBoxNameFantasia.Text;
+            string telefono = TextBoxTelefono.Text;
+            string email = TextBoxEmail.Text;
+            bool esVIP = DropDownListVIP.SelectedValue.Equals("Si")?true:false;
             double arancelVIP = -100;
             if (esVIP)
             {
                 arancelVIP = Convert.ToDouble(TextBoxArancelVIP.Text);
             }
-            bool exito = miServicio.WCFChangeDatosProveedor(idProveedor, fechaIngreso, esVIP, arancelVIP);
+            bool exito = miServicio.WCFChangeDatosProveedor(idProveedor, nombreCompleto, nombreFantasia, email, telefono, esVIP, arancelVIP);
             if (exito)
             {
                 //Muestro los paneles
@@ -91,6 +105,18 @@ namespace InterfazWeb.PerfilAdmin
                 PanelMensaje.Visible = true;
                 //Muestro el mensaje
                 LabelMensaje.Text = "ERROR. No se pudo modificar al Proveedor. Intente nuevamente.";
+            }
+        }
+
+        protected void DropDownListVIP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool esVIP = DropDownListVIP.SelectedValue.Equals("Si") ? true : false;
+            if (esVIP)
+            {
+                PanelArancelVIP.Visible = true;
+            }
+            else{
+                PanelArancelVIP.Visible = false;
             }
         }
     }

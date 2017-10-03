@@ -52,17 +52,23 @@ namespace InterfazWeb.PerfilAdmin
             //Cargo los datos de Servicios del proveedor
             if (p.ListaServicios.Count > 0)
             {
+                GridViewServiciosProveedor.Visible = true;
                 GridViewServiciosProveedor.DataSource = p.ListaServicios;
                 GridViewServiciosProveedor.DataBind();
                 LabelSinServicios.Text = "";
             }
             else{
+                GridViewServiciosProveedor.Visible = false;
                 LabelSinServicios.Text = "El proveedor no cuenta con servicios asociados.";
             }
             
         }
 
-
-
+        protected void ButtonCerrar_Click(object sender, EventArgs e)
+        {
+            //Muestro los paneles
+            PanelSeleccionProveedor.Visible = true;
+            PanelDatosProveedorSeleccionado.Visible = false;
+        }
     }
 }

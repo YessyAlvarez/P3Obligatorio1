@@ -17,33 +17,41 @@
     <p>
     </p>
     <asp:Panel ID="PanelResultadoProveedor" runat="server">
-        <br />
-        Nombre completo<br />
-        <asp:TextBox ID="TextBoxNombreCompleto" runat="server"></asp:TextBox>
-        <br />
-        Contraseña<br />
-        <asp:TextBox ID="TextBoxContrasenia" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        Fecha de ingreso<br />
-        <asp:TextBox ID="TextBoxFechaIngreso" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        VIP<br />
-        <asp:DropDownList ID="DropDownListVIP" runat="server">
-        </asp:DropDownList>
-        <br />
-        <br />
-        <asp:Panel ID="PanelArancelVIP" runat="server">
+        <div class="seleccionadoProveedor">
             <br />
-            Arancel VIP<br />
-            <asp:TextBox ID="TextBoxArancelVIP" runat="server"></asp:TextBox>
-        </asp:Panel>
-        <br />
-        <br />
-        <asp:Button ID="ButtonGuardarCambiosProveedor" runat="server" OnClick="ButtonGuardarCambiosProveedor_Click" Text="Guardar" />
-        <br />
-        <br />
+            Nombre completo<br />
+            <asp:TextBox ID="TextBoxNombreCompleto" runat="server"></asp:TextBox>
+            <br />
+            Nombre Fantasía<br />
+            <asp:TextBox ID="TextBoxNameFantasia" runat="server"></asp:TextBox>
+            <br />
+            Email<br />
+            <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
+            <br />
+            Fecha de ingreso :
+            <asp:Label ID="LabelFechaIngreso" runat="server"></asp:Label>
+            <br />
+            Telefono<br />
+            <asp:TextBox ID="TextBoxTelefono" runat="server"></asp:TextBox>
+            <br />
+            VIP<br />
+            <asp:DropDownList ID="DropDownListVIP" runat="server" OnSelectedIndexChanged="DropDownListVIP_SelectedIndexChanged">
+                <asp:ListItem>Si</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <asp:Panel ID="PanelArancelVIP" runat="server">
+                Arancel VIP<br />
+                <asp:TextBox ID="TextBoxArancelVIP" runat="server"></asp:TextBox>
+            </asp:Panel>
+            Activo:
+            <asp:Label ID="LabelActivo" runat="server"></asp:Label>
+            <br />
+            <br />
+            <asp:Button ID="ButtonGuardarCambiosProveedor" runat="server" OnClick="ButtonGuardarCambiosProveedor_Click" Text="Guardar" />
+            <br />
+            <br />
+        </div>
     </asp:Panel>
     <p>
         &nbsp;</p>
@@ -59,4 +67,15 @@
     </p>
     <p>
     </p>
+
+    
+    <style>
+        .seleccionadoProveedor {
+            width: 90%;
+            border: 1px solid #eeeeee;
+            padding: 1%;
+        }
+    </style>
+
+
 </asp:Content>

@@ -325,18 +325,16 @@ namespace Dominio
         #endregion
         
         #region modificar datos proveedor
-        public static bool CambiarDatosProveedor(string idProveedor, DateTime fechaIngreso, bool esVIP, double valorArncelVIP)
+        public static bool CambiarDatosProveedor(string idProveedor, string nombreCompleto, string nombreFantasia, string email, string telefono, bool esVIP, double arancelVIP)
         {
 
             SqlConnection cn = Conexion.CrearConexion();
 
             SqlCommand cmd = new SqlCommand();
             SqlTransaction trn = null;
-            cmd.CommandText = @"UPDATE Proveedor SET fechaIngreso=@fecha, VIP=@vip, arancelVIP=@arancel  WHERE idProveedor=@idProv";
+            cmd.CommandText = @"UPDATE Usuario SET nombreCompleto=@nombreCompleto  WHERE nombreUsuario=@idProv";
             cmd.Parameters.AddWithValue("@idProv", idProveedor);
-            cmd.Parameters.AddWithValue("@fecha", fechaIngreso);
-            cmd.Parameters.AddWithValue("@vip", esVIP ? "1" : "0");
-            cmd.Parameters.AddWithValue("@arancel", valorArncelVIP);
+            cmd.Parameters.AddWithValue("@nombreCompleto", nombreCompleto);
             cmd.Connection = cn;
 
             try
@@ -344,6 +342,17 @@ namespace Dominio
                 Conexion.AbrirConexion(cn);
                 trn = cn.BeginTransaction();
                 cmd.Transaction = trn;
+                cmd.ExecuteNonQuery();
+
+                //Modifico la tabla proveedor con los cambios
+                cmd.Parameters.Clear();
+                cmd.CommandText = @"UPDATE Proveedor SET nombreFantasia=@fantasia, email=@email, telefono=@telefono, VIP=@VIP, arancelVIP=@arancel WHERE idProveedor=@idProv;";
+                cmd.Parameters.Add(new SqlParameter("@idProv", idProveedor));
+                cmd.Parameters.Add(new SqlParameter("@fantasia", nombreFantasia));
+                cmd.Parameters.Add(new SqlParameter("@email", email));
+                cmd.Parameters.Add(new SqlParameter("@telefono", telefono));
+                cmd.Parameters.Add(new SqlParameter("@VIP", esVIP));
+                cmd.Parameters.Add(new SqlParameter("@arancel", arancelVIP));
 
                 //Ejecuto la consulta
                 int filasAfectadas = cmd.ExecuteNonQuery();
