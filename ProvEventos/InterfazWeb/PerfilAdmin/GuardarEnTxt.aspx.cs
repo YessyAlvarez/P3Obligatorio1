@@ -23,7 +23,7 @@ namespace InterfazWeb.PerfilAdmin
 
         protected void ButtonEven_Click(object sender, EventArgs e)
         {
-
+            miServicio.WCFGuardarTxtServicios();
         }
     }
 }
