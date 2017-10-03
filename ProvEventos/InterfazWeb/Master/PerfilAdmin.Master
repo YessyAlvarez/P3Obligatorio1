@@ -60,12 +60,7 @@
         <p><asp:LinkButton ID="LinkButtonGrabarArchivo" runat="server" OnClick="LinkButtonGrabarProveedores_Click" >Grabar Archivos texto</asp:LinkButton></p>
     
         </asp:Panel>
-<<<<<<< HEAD
-=======
 
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
->>>>>>> d3442afa03ea64f09c6fc91d303704ccf5d087f9
-        
 <div class="body">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 

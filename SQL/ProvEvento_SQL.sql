@@ -8,6 +8,8 @@ create table Usuario(
 	tipoPerfil VARCHAR(1) NOT NULL, 	
 );
 
+SELECT * FROM Proveedor p, Usuario u WHERE p.idProveedor = u.nombreUsuario
+
 INSERT INTO Usuario values('admin1', '202cb962ac59075b964b07152d234b70', ' Heber Gonzalez', 1);
 INSERT INTO Usuario values('admin2', '202cb962ac59075b964b07152d234b70', 'Pinion Arturo Fijo', 1);
 INSERT INTO Usuario values('20100510', '202cb962ac59075b964b07152d234b70', 'GauchitoDeOro', 2);

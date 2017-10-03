@@ -19,7 +19,7 @@ namespace Dominio
 
         public static List<ProveedorServicio> traerServiciosProveedor(string rut) {
             List<ProveedorServicio> ret = new List<ProveedorServicio>();
-            string consulta = @"SELECT * FROM Proveedor_Servicios where idProveedor = " + rut;
+            string consulta = @"SELECT * FROM Proveedor_Servicios where idProveedor = '" + rut + "';";
             SqlConnection cn = Conexion.CrearConexion();
             SqlCommand cmd = new SqlCommand(consulta, cn);
             try

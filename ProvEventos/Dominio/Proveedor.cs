@@ -148,7 +148,7 @@ namespace Dominio
         public static List<Proveedor> ObtenerAllProveedores()
         {
 
-            string consulta = @"SELECT idProveedor, fechaIngreso, VIP, arancelVIP, activo FROM Proveedor";
+            string consulta = @"SELECT * FROM Proveedor p, Usuario u WHERE p.idProveedor = u.nombreUsuario";
 
             SqlConnection cn = Conexion.CrearConexion();
 
@@ -192,11 +192,16 @@ namespace Dominio
             {
                 proveedor = new Proveedor
                 {
-                    NombreApellido = fila.IsDBNull(fila.GetOrdinal("nombreCompleto")).ToString(),
-                    FechaRegistro = DateTime.Now,//fila.IsDBNull(fila.GetOrdinal("fechaIngreso")) ? DateTime.MinValue : fila.GetDateTime(fila.GetOrdinal("fechaIngreso")).Date,
-                    VIP = true,//fila.IsDBNull(fila.GetOrdinal("VIP")).Equals("1") ? true : false,
-                    ArancelVIP = 12, //fila.IsDBNull(fila.GetOrdinal("arancelVIP")) ? 0 : fila.GetDouble(fila.GetOrdinal("arancelVIP")),
-                    Activo = true, //fila.IsDBNull(fila.GetOrdinal("activo")) ? true : false,
+                    RUT = fila["idProveedor"].ToString(),
+                    Email = fila["email"].ToString(),
+                    FechaRegistro = Convert.ToDateTime(fila["fechaIngreso"]),
+                    Telefono = fila["telefono"].ToString(),
+                    VIP = fila["VIP"].Equals("1") ? true : false,
+                    ArancelVIP = Convert.ToDouble(fila["arancelVIP"]),
+                    Activo = fila["activo"].Equals("1") ? true : false,
+                    NombreApellido = fila["nombreUsuario"].ToString(),
+                    Password = fila["password"].ToString(),
+                    NombreFantasia = fila["nombreFantasia"].ToString(),
                     TipoPerfil = EnumPerfil.Proveedor,
                 };
             }

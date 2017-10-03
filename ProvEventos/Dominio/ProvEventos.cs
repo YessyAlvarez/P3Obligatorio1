@@ -52,7 +52,7 @@ namespace Dominio
             if (File.Exists(path)) {
                 File.Delete(path);
             }
-            File.Create(path);
+            File.Create(path).Close();
 
             //Cargar Servicios al proveedor
             foreach (Proveedor p in proveedores) {
@@ -72,6 +72,29 @@ namespace Dominio
                 tw.WriteLine(textoArchivo);
             }
             tw.Close();
+        }
+        public static void generarTxtServicios() {
+       /*     List<Servicio> servicios = Servicio.ObtenerServiciosConTipoEvento();
+
+            //Crear o reemplazar el archivo
+            string path = @"C:\Users\IEUser\Desktop\proveedores.txt";
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            File.Create(path);
+            TextWriter tw = new StreamWriter(path);
+           
+                string textoArchivo = null;
+                textoArchivo += s.ToString2();
+            
+                tw.WriteLine(textoArchivo);
+            }
+            tw.Close();
+            foreach (Servicio s in servicios) {
+
+            }
+            */
         }
     }
 }
