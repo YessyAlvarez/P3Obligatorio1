@@ -67,7 +67,6 @@ namespace Dominio
 
                 foreach (ProveedorServicio s in p.ListaServicios) {
                     textoArchivo += s.ToString2();
-
                 }
                 tw.WriteLine(textoArchivo);
             }
@@ -92,6 +91,18 @@ namespace Dominio
                 tw.WriteLine(textoArchivo);
             }
             tw.Close();
+        }
+        public static void leerTxtProveedores() {
+            List<Proveedor> proveedores = new List<Proveedor>();
+            string path = @"C:\Users\Diseño\Desktop\proveedores.txt";
+            if (File.Exists(path))
+            {
+                TextReader tr = new StreamReader(path);
+                string linea;
+                while ((linea = tr.ReadLine()) != null) {
+                    Proveedor p = new Proveedor();
+                }
+            }
         }
     }
 }

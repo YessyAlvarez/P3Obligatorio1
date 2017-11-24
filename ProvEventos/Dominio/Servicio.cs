@@ -12,9 +12,9 @@ namespace Dominio
 {
     public class Servicio
     {
-        public int Id { set; get; }
-        public int IdServicio { set; get; }
-        public string NombreServicio { set; get; }
+        //public int Id { set; get; }
+       // public int IdServicio { set; get; }
+        public string IdNombreServicio { set; get; }
         public List<TipoEvento> ListaEventos { set; get; }
 
         public static List<Servicio> ObtenerServiciosConTipoEvento()
@@ -49,9 +49,7 @@ namespace Dominio
                 Conexion.CerrarConexion(cn);
             }
         }
-
-
-
+        
         protected static Servicio CargarDatosDesdeReader(IDataRecord fila)
         {
             Servicio servicio = null;
@@ -59,16 +57,13 @@ namespace Dominio
             {
                 servicio = new Servicio
                 {
-                    IdServicio = fila.IsDBNull(fila.GetOrdinal("idServicio")) ? 0 : fila.GetInt32(fila.GetOrdinal("idServicio")),
-                    NombreServicio = fila.IsDBNull(fila.GetOrdinal("nombreServicio")) ? "" : fila.GetString(fila.GetOrdinal("nombreServicio")),
+                    //IdServicio = fila.IsDBNull(fila.GetOrdinal("idServicio")) ? 0 : fila.GetInt32(fila.GetOrdinal("idServicio")),
+                    IdNombreServicio = fila.IsDBNull(fila.GetOrdinal("nombreServicio")) ? "" : fila.GetString(fila.GetOrdinal("nombreServicio")),
                 };
             }
             return servicio;
         }
-
-
-
-
+        
         public static List<TipoEvento> FindTipoEventoFroServicio(int idServicio)
         {
             SqlConnection cn = Conexion.CrearConexion();
@@ -84,8 +79,8 @@ namespace Dominio
                     {
                         lista.Add(new TipoEvento
                         {
-                            Id = (int)dr["idEvento"],
-                            Nombre = dr["nombreEvento"].ToString(),
+                            //Id = (int)dr["idEvento"],
+                            IdNombreServicio = dr["nombreEvento"].ToString(),
                             Descripcion = dr["descripcion"].ToString()
                         });
                     }
@@ -110,13 +105,13 @@ namespace Dominio
         #region TOSTRING
         public override string ToString()
         {
-            return this.NombreServicio;
+            return this.IdNombreServicio;
         }
 
         #endregion
 
         public string ToString2() {
-            return this.NombreServicio + "#";
+            return this.IdNombreServicio + "#";
         }
     }
 }

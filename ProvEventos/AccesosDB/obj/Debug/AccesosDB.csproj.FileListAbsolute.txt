@@ -7,3 +7,7 @@ C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\P
 C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\AccesosDB\bin\Debug\AccesosDB.pdb
 C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\AccesosDB\obj\Debug\AccesosDB.dll
 C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\AccesosDB\obj\Debug\AccesosDB.pdb
+C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\AccesosDB\bin\Debug\AccesosDB.dll
+C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\AccesosDB\bin\Debug\AccesosDB.pdb
+C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\AccesosDB\obj\Debug\AccesosDB.dll
+C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\AccesosDB\obj\Debug\AccesosDB.pdb

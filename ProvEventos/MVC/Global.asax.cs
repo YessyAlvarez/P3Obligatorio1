@@ -17,8 +17,8 @@ namespace MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Session["nombreUsuario"] = null;
-            Session["perfilUsuario"] = null;
+            //Session["nombreUsuario"] = null;
+            //Session["perfilUsuario"] = null;
         }
     }
 }

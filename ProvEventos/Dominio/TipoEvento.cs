@@ -9,16 +9,11 @@ namespace Dominio
     public class TipoEvento
     {
 
-        public static int NumeroId = 100;
-        public int Id { set; get; }
-        public string Nombre { set; get; }
+        public static int Numero = 100;
+        //public int Id { set; get; }
+        public string IdNombre { set; get; }
         public string Descripcion { set; get; }
-
-
-
-
-
-
+        
         #region TOSTRING
         public override string ToString()
         {
