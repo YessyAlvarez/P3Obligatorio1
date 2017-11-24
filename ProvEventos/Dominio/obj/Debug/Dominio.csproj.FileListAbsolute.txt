@@ -5,3 +5,10 @@ C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\GIT3\P3Obligatorio1\ProvEve
 C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\GIT3\P3Obligatorio1\ProvEventos\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
 C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\GIT3\P3Obligatorio1\ProvEventos\Dominio\obj\Debug\Dominio.dll
 C:\Users\Diseño\Documents\Yes!\Facu\P3\GRUPO P3\GIT\GIT3\P3Obligatorio1\ProvEventos\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\Dominio\bin\Debug\Dominio.dll
+C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\Dominio\bin\Debug\AccesosDB.dll
+C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\Dominio\bin\Debug\AccesosDB.pdb
+C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
+C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\Dominio\obj\Debug\Dominio.dll
+C:\Users\Diseño\Documents\Yes!\Facu\P3\2ª entrega Obligatorio\P3Obligatorio2\ProvEventos\Dominio\obj\Debug\Dominio.pdb

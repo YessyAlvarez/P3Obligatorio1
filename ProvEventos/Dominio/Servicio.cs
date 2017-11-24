@@ -12,6 +12,7 @@ namespace Dominio
 {
     public class Servicio
     {
+        public int Id { set; get; }
         public int IdServicio { set; get; }
         public string NombreServicio { set; get; }
         public List<TipoEvento> ListaEventos { set; get; }

@@ -12,6 +12,7 @@ namespace Dominio
 {
     public class Usuario
     {
+        public int Id { set; get; }
         public string UsuarioLogin { set; get; }
         public string Password { set; get; }
         public EnumPerfil TipoPerfil { set; get; }

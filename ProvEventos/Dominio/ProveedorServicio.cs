@@ -11,6 +11,7 @@ namespace Dominio
 {
     public class ProveedorServicio
     {
+        public int Id { set; get; }
         public string IdProveedor { set; get; }
         public int IdServicio { set; get; }
         public string Imagen { set; get; }

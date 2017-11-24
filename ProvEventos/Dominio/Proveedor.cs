@@ -10,6 +10,7 @@ namespace Dominio
     public class Proveedor : Usuario
     {
         #region ATRIBUTOS
+        public int Id { set; get; }
         public static double ArancelAnual { set; get; }
         public string RUT { set; get; }
         public string NombreFantasia { set; get; }

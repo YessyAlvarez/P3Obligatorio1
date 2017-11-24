@@ -8,6 +8,7 @@ namespace Dominio
 {
     public class EventoProveedor
     {
+        public int Id { set; get; }
         public int Puntaje { set; get; }
         public string Comentario { set; get; }
         public int ProveedorRUT { set; get; }

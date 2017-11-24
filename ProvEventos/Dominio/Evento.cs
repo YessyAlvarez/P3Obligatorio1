@@ -9,6 +9,7 @@ namespace Dominio
     public class Evento
     {
         #region ATRIBUTOS
+        public int Id { set; get; }
         public TipoEvento TipoEvento { set; get; }
         public List<EventoProveedor> ListaServiciosProveedor { set; get; }
         public DateTime Fecha { set; get; }
