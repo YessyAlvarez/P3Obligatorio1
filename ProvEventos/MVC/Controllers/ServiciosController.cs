@@ -71,8 +71,6 @@ namespace MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateFromTxt(bool bandera)
         {
-            if (bandera)
-            {
                 string path = @"C:\Users\Diseño\Desktop\servicios.txt";
                 if (System.IO.File.Exists(path))
                 {
@@ -94,7 +92,7 @@ namespace MVC.Controllers
                         db.Servicio.Add(s);
                     }
                 }
-            }
+            
             return View(db.Servicio.ToList());
         }
 
