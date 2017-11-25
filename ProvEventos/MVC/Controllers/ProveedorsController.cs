@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Dominio;
 using MVC.Models.contexto;
+using System.IO;
 
 namespace MVC.Controllers
 {
@@ -57,6 +58,58 @@ namespace MVC.Controllers
             }
 
             return View(proveedor);
+        }
+
+        // POST: Servicios/CreateFromTxt
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateFromTxt()
+        {
+            string path = @"C:\Users\Diseño\Desktop\proveedores.txt";
+            if (System.IO.File.Exists(path))
+            {
+                TextReader tr = new StreamReader(path);
+                string linea;
+                while ((linea = tr.ReadLine()) != null)
+                {
+                    Proveedor p = new Proveedor();
+                    string[] separadores = new string[] { "#", "|" };
+                    string[] prov = linea.Split(separadores, StringSplitOptions.RemoveEmptyEntries);
+                    if (db.Proveedores.Find(prov[0]) == null)
+                    {
+                        p.Rut = prov[0];
+                        p.NombreFantasia = prov[1];
+                        p.Email = prov[2];
+                        p.Telefono = prov[3];
+                        p.UsuarioLogin = p.Rut;
+                        p.NombreApellido = p.NombreFantasia;
+                        p.TipoPerfil = EnumPerfil.Proveedor;
+                        p.VIP = false;
+                        p.Activo = true;
+                        p.FechaRegistro = DateTime.Today;
+                        for (int i = 4; i < prov.Length; i++)
+                        {
+                            string[] separadores2 = new string[] { "#", "|" };
+                            string[] provServ = prov[i].Split(separadores, StringSplitOptions.RemoveEmptyEntries);
+                            if (db.Servicio.Find(prov[0]) != null)
+                            {
+                                ProveedorServicio ps = new ProveedorServicio();
+                                ps.IdNombreServicio = provServ[0];
+                                ps.IdProveedor = p.Rut;
+                                ps.Imagen = provServ[2];
+                                ps.Descripcion = provServ[1];
+                                ps.Activo = true;
+
+                                p.ListaServicios.Add(ps);
+                                db.ProveedorServicios.Add(ps);
+                            }
+                        }
+                        db.Proveedores.Add(p);
+                    }
+                }
+            }
+
+            return View(db.Servicio.ToList());
         }
 
         // GET: Proveedors/Edit/5

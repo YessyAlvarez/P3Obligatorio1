@@ -11,7 +11,7 @@ namespace Dominio
     public class ProveedorServicio
     {
         public string IdProveedor { set; get; }
-        public int IdNombreServicio { set; get; }
+        public string IdNombreServicio { set; get; }
         public string Imagen { set; get; }
         public string Descripcion { set; get; }
         public bool Activo { set; get; }

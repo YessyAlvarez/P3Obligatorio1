@@ -59,17 +59,17 @@ namespace MVC.Controllers
 
             return View(servicio);
         }
-
-        // GET: Servicios/Create
-        public ActionResult CreateFromTxt()
-        {
-            return View();
-        }
+        [HttpGet]
+        // GET: Servicios/CreateFromTxt
+        //public ActionResult CreateFromTxt()
+        //{
+        //    return View();
+        //}
 
         // POST: Servicios/CreateFromTxt
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateFromTxt(bool bandera)
+        public ActionResult CreateFromTxt()
         {
                 string path = @"C:\Users\Diseño\Desktop\servicios.txt";
                 if (System.IO.File.Exists(path))
