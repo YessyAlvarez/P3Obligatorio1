@@ -152,7 +152,6 @@ C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\System
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\System.Web.WebPages.dll
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\System.Web.WebPages.Razor.dll
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\WebGrease.dll
-C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\AccesosDB.dll
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\Dominio.pdb
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\EntityFramework.xml
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\EntityFramework.SqlServer.xml
@@ -183,7 +182,6 @@ C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\Micros
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\AccesosDB.pdb
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\es\System.Web.Helpers.resources.dll
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\es\System.Web.Mvc.resources.dll
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\es\System.Web.Optimization.resources.dll

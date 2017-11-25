@@ -52,12 +52,6 @@
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AccesosDB\AccesosDB.csproj">
-      <Project>{63b13f23-01e5-413b-98ac-92f5edc1e900}</Project>
-      <Name>AccesosDB</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

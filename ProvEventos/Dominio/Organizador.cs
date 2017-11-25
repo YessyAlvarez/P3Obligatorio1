@@ -8,11 +8,8 @@ namespace Dominio
 {
     public class Organizador : Usuario
     {
-        public int Id { set; get; }
         public string Telefono { set; get; }
         public List<Evento> EventosOrganizados { set; get; }
-
-
 
     }
 }
