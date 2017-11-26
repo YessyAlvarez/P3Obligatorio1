@@ -1,0 +1,17 @@
+Decoracion#Aniversarios:Campeonatos:Casamientos:Competencias:Conciertos:Concursos:
+Salon de fiestas#Despedidas:Dia del niños:Ferias:Fiesta de egresados:Fiesta de fin de año:
+Mobiliario#Nacimientos:Reunion ex-alumnos:Torneos:Torneos juveniles:
+Banquetes#Cumpleaños:Dia del niños:Ferias:Fiesta de egresados:Fiesta de fin de año:
+Candy Bar#Aniversarios:Campeonatos:
+Cupcakes#Casamientos:Competencias:
+Fuente de chocolate#Conciertos:Concursos:
+Fuente de queso#Congresos:Cumpleaños:
+Mesa de dulces#Despedidas:Dia del niños:
+Pasteles#Ferias:Fiesta de egresados:
+Inflables#Fiesta de fin de año:Nacimientos:
+Globos#Reunion ex-alumnos:Torneos:
+Invitaciones#Torneos:Torneos juveniles:
+Musica en vivo#Despedidas:Dia del niños:Ferias:
+Magos#Aniversarios:Campeonatos:
+Payasos#Casamientos:Competencias:
+Menage#Conciertos:Concursos
