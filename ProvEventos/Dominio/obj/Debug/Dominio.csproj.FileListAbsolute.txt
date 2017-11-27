@@ -16,3 +16,8 @@ C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\Dominio\bin\De
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\Dominio\bin\Debug\Dominio.pdb
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\Dominio\obj\Debug\Dominio.dll
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\Dominio\obj\Debug\Dominio.pdb
+C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\Dominio\bin\Debug\Dominio.dll
+C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\Dominio\bin\Debug\Dominio.pdb
+C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
+C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\Dominio\obj\Debug\Dominio.dll
+C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\Dominio\obj\Debug\Dominio.pdb

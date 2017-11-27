@@ -21,6 +21,7 @@ namespace MVC
             
             MiContextoContext db = new MiContextoContext();
 
+
             string archivoProveedores = System.Configuration.ConfigurationManager.AppSettings["archivoProveedores"];
             ICollection<Proveedor> proveedores = ProvEventos.leerTxtProveedores(archivoProveedores);
             db.Proveedores.AddRange(proveedores);

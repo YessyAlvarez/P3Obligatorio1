@@ -19,7 +19,7 @@ namespace MVC.Controllers
         // GET: Proveedors
         public ActionResult Index()
         {
-            return View(db.Usuarios.ToList());
+            return View(db.Proveedores.ToList());
         }
 
         // GET: Proveedors/Details/5
