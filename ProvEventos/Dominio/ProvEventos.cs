@@ -55,6 +55,12 @@ namespace Dominio
 
             return p;
         }
+
+        public static ICollection<Servicio> leerTxtEventos(string path) {
+            List<Servicio> servicios = new List<Servicio>();
+
+            return servicios;
+        }
     }
 }
 

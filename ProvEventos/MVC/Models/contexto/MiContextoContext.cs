@@ -18,6 +18,6 @@ namespace MVC.Models.contexto
         public DbSet<TipoEvento> TipoEventos { set; get; }
         public DbSet<Usuario> Usuarios { set; get; }
 
-
+        public MiContextoContext() : base("conexionProvEvento") {}
     }
 }
