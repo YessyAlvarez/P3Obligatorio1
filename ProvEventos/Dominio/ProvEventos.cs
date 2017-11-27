@@ -9,18 +9,22 @@ namespace Dominio
 {
     public class ProvEventos
     {
-
-        public static void leerTxtProveedores() {
+        public static ICollection<Proveedor> leerTxtProveedores(string path) {
             List<Proveedor> proveedores = new List<Proveedor>();
-            string path = @"C:\Users\Diseño\Desktop\proveedores.txt";
             if (File.Exists(path))
             {
                 TextReader tr = new StreamReader(path);
                 string linea;
                 while ((linea = tr.ReadLine()) != null) {
-                    Proveedor p = new Proveedor();
+                    proveedores.Add(cargarProveedor(linea));
                 }
             }
+            return proveedores;
+        }
+
+        public static Proveedor cargarProveedor(string linea)
+        {
+            return null;
         }
     }
 }

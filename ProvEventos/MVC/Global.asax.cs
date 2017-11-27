@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using MVC.Models.contexto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,15 @@ namespace MVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
+            MiContextoContext db = new MiContextoContext();
+
+            string archivoProveedores = System.Configuration.ConfigurationManager.AppSettings["archivoProveedores"];
+            ICollection<Proveedor> proveedores = ProvEventos.leerTxtProveedores(archivoProveedores);
+            db.Proveedores.AddRange(proveedores);
+
+            db.SaveChanges();
+
 
             //Session["nombreUsuario"] = null;
             //Session["perfilUsuario"] = null;
