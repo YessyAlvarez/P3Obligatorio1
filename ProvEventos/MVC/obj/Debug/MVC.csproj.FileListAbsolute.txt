@@ -202,3 +202,6 @@ C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\bin\es\Mic
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.csprojResolveAssemblyReference.cache
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.dll
 C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.pdb
+C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.Migrations.InitialCreate.resources
+C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.csproj.GenerateResource.Cache
+C:\Users\IEUser\Desktop\ObligatorioMVC\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.Migrations.updatingDBstructure.resources

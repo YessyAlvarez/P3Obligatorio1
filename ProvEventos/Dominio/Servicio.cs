@@ -12,7 +12,8 @@ namespace Dominio
 {
     public class Servicio
     {
-        public string IdNombreServicio { set; get; }
+        public int Id { set; get; }
+        public string NombreServicio { set; get; }
         public List<TipoEvento> ListaEventos { set; get; }
 
        
@@ -20,13 +21,13 @@ namespace Dominio
         #region TOSTRING
         public override string ToString()
         {
-            return this.IdNombreServicio;
+            return this.NombreServicio;
         }
 
         #endregion
 
         public string ToString2() {
-            return this.IdNombreServicio + "#";
+            return this.NombreServicio + "#";
         }
     }
 }

@@ -10,14 +10,15 @@ namespace Dominio
 {
     public class ProveedorServicio
     {
-        public string IdProveedor { set; get; }
-        public string IdNombreServicio { set; get; }
+        public int Id { set; get; }
+        public string Proveedor { set; get; }
+        public string NombreServicio { set; get; }
         public string Imagen { set; get; }
         public string Descripcion { set; get; }
         public bool Activo { set; get; }
         
         public string ToString2() {
-            return this.IdNombreServicio + ":" + this.Descripcion + ":" + this.Imagen + "#";
+            return this.NombreServicio + ":" + this.Descripcion + ":" + this.Imagen + "#";
         }
     }
 }

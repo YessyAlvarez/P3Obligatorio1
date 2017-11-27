@@ -81,7 +81,7 @@ namespace MVC.Controllers
                         Servicio s = new Servicio();
                         string[] separadores = new string[] { "#", ":" };
                         string[] serv = linea.Split(separadores, StringSplitOptions.RemoveEmptyEntries);
-                        s.IdNombreServicio = serv[0];
+                        s.NombreServicio = serv[0];
                         for (int i = 1; i < serv.Length; i++)
                         {
                             TipoEvento e = db.TipoEventos.Find(serv[i]);

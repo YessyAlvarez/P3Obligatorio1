@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Dominio;
 using MVC.Models.contexto;
+using MVC.ViewModels;
 
 namespace MVC.Controllers
 {
@@ -50,10 +51,12 @@ namespace MVC.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UsuarioLogin,Password,TipoPerfil,NombreApellido,Telefono")] Organizador organizador)
+        public ActionResult Create([Bind(Include = "Id,UsuarioLogin,Password,NombreApellido,Telefono")] Organizador organizador)
         {
             if (ModelState.IsValid)
             {
+                organizador.TipoPerfil = EnumPerfil.Organizador;
+                organizador.EventosOrganizados = new List<Evento>();
                 db.Usuarios.Add(organizador);
                 db.SaveChanges();
                 return RedirectToAction("Index");

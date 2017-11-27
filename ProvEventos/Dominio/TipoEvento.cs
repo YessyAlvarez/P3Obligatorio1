@@ -8,16 +8,17 @@ namespace Dominio
 {
     public class TipoEvento
     {
-        public string IdNombre { set; get; }
+        public int Id { set; get; }
+        public string Nombre { set; get; }
         public string Descripcion { set; get; }
         
         #region TOSTRING
         public override string ToString()
         {
-            return this.IdNombre;
+            return this.Nombre;
         }
         public string ToString2() {
-            return this.IdNombre + ":";
+            return this.Nombre + ":";
         }
         #endregion
     }

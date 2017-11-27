@@ -94,8 +94,8 @@ namespace MVC.Controllers
                             if (db.Servicio.Find(prov[0]) != null)
                             {
                                 ProveedorServicio ps = new ProveedorServicio();
-                                ps.IdNombreServicio = provServ[0];
-                                ps.IdProveedor = p.Rut;
+                                ps.NombreServicio = provServ[0];
+                                ps.Proveedor = p.Rut;
                                 ps.Imagen = provServ[2];
                                 ps.Descripcion = provServ[1];
                                 ps.Activo = true;

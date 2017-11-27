@@ -208,6 +208,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711202341033_InitialCreate.cs" />
+    <Compile Include="Migrations\201711202341033_InitialCreate.Designer.cs">
+      <DependentUpon>201711202341033_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711270021357_updatingDBstructure.cs" />
+    <Compile Include="Migrations\201711270021357_updatingDBstructure.Designer.cs">
+      <DependentUpon>201711270021357_updatingDBstructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\contexto\MiContextoContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -215,6 +224,7 @@
     <Compile Include="Models\UsuarioViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AltaOrganizadorViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -311,6 +321,14 @@
       <Project>{ccfdbf46-d95f-4d6c-a394-37f4be54536b}</Project>
       <Name>Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711202341033_InitialCreate.resx">
+      <DependentUpon>201711202341033_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711270021357_updatingDBstructure.resx">
+      <DependentUpon>201711270021357_updatingDBstructure.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
