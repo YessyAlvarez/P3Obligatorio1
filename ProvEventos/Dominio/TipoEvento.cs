@@ -4,13 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio
 {
     public class TipoEvento
     {
+        
         public int Id { set; get; }
-        [Key][Display(Name = "Nombre del evento")]
+        
+        [Display(Name = "Nombre del evento")]
         public string Nombre { set; get; }
       //public string Descripcion { set; get; }
         

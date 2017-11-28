@@ -23,17 +23,18 @@ namespace MVC
             string archivoEventos = System.Configuration.ConfigurationManager.AppSettings["archivoEventos"];
             if (System.IO.File.Exists(archivoEventos)) {
                 Servicio primero = ProvEventos.primeraLineaTxtEventos(archivoEventos);
-
                 var servId = from s in db.Servicio
                              where s.NombreServicio == primero.NombreServicio
-                             select s.Id;
-
-                if (db.Servicio.Find(Convert.ToInt32(servId)) != primero) { // cambiar el find para busqueda linq por nombre 
+                             select s;
+                if (db.Servicio.Count() == 0) { 
                     List<Servicio> servicios = ProvEventos.leerTxtEventos(archivoEventos);
                     foreach (Servicio s in servicios)
                     {
                         foreach (TipoEvento t in s.ListaEventos) {
-                            if (db.TipoEventos.Find(t.Id) != t) { //cambiar el find para busqueda linq por nombre
+                            var tipoId = from te in db.TipoEventos
+                                         where te.Nombre == t.Nombre
+                                         select te.Id;
+                            if (db.TipoEventos.Find(Convert.ToInt32(tipoId)) != t) {
                                 db.TipoEventos.Add(t);
                             }
                         }
@@ -44,8 +45,7 @@ namespace MVC
             }
             string archivoProveedores = System.Configuration.ConfigurationManager.AppSettings["archivoProveedores"];
             if (System.IO.File.Exists(archivoProveedores)) {
-                Proveedor primero  = ProvEventos.primeraLineaTxtProveedores(archivoProveedores);
-                if (db.Proveedores.Count() == 0)
+                 if (db.Proveedores.Count() == 0)
                 {
                     List<Proveedor> proveedores = ProvEventos.leerTxtProveedores(archivoProveedores);
                     foreach (Proveedor p in proveedores)

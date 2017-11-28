@@ -34,7 +34,7 @@ namespace Dominio
             p.UsuarioLogin = p.Rut;
             p.NombreApellido = p.NombreFantasia;
             p.TipoPerfil = EnumPerfil.Proveedor;
-            p.VIP = false;
+            p.VIP = Convert.ToBoolean(prov[4]);
             p.Activo = true;
             p.FechaRegistro = DateTime.Today;
             p.ListaServicios = new List<ProveedorServicio>();
