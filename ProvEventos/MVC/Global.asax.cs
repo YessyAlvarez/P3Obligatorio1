@@ -23,7 +23,12 @@ namespace MVC
             string archivoEventos = System.Configuration.ConfigurationManager.AppSettings["archivoEventos"];
             if (System.IO.File.Exists(archivoEventos)) {
                 Servicio primero = ProvEventos.primeraLineaTxtEventos(archivoEventos);
-                if (db.Servicio.Find(primero.Id) != primero) { // cambiar el find para busqueda linq por nombre 
+
+                var servId = from s in db.Servicio
+                             where s.NombreServicio == primero.NombreServicio
+                             select s.Id;
+
+                if (db.Servicio.Find(Convert.ToInt32(servId)) != primero) { // cambiar el find para busqueda linq por nombre 
                     List<Servicio> servicios = ProvEventos.leerTxtEventos(archivoEventos);
                     foreach (Servicio s in servicios)
                     {
@@ -34,20 +39,25 @@ namespace MVC
                         }
                     }
                     db.Servicio.AddRange(servicios);
+                    db.SaveChanges();
                 }
             }
             string archivoProveedores = System.Configuration.ConfigurationManager.AppSettings["archivoProveedores"];
             if (System.IO.File.Exists(archivoProveedores)) {
                 Proveedor primero  = ProvEventos.primeraLineaTxtProveedores(archivoProveedores);
-                if (db.Proveedores.Count() != 0) // cambiar el find para busqueda linq por nombre
+                if (db.Proveedores.Count() == 0)
                 {
                     List<Proveedor> proveedores = ProvEventos.leerTxtProveedores(archivoProveedores);
                     foreach (Proveedor p in proveedores)
                     {
                         foreach (ProveedorServicio ps in p.ListaServicios)
                         {
-                            if (db.Servicio.Find(ps.NombreServicio).NombreServicio == ps.NombreServicio)
-                            { //cambiar el find para busqueda linq por nombre
+                            var serv = from s in db.Servicio
+                                       where s.NombreServicio == ps.NombreServicio
+                                       select s.Id;
+
+                            if (db.Servicio.Find(Convert.ToInt32(serv)).NombreServicio == ps.NombreServicio)
+                            { 
                                 db.ProveedorServicios.Add(ps);
                             }
                             else {
@@ -56,6 +66,7 @@ namespace MVC
                         }
                     }
                     db.Proveedores.AddRange(proveedores);
+                    db.SaveChanges();
                 }
             }
              

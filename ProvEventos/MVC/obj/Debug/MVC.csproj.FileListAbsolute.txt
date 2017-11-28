@@ -310,3 +310,4 @@ C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.cspro
 C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.dll
 C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.pdb
 C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.Migrations.updatingDBstructure1.resources
+C:\Users\IEUser\Desktop\carga\P3Obligatorio1\ProvEventos\MVC\obj\Debug\MVC.Migrations.updatingDBstructure2.resources

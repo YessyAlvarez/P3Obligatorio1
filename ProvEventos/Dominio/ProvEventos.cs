@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dominio
 {
@@ -77,6 +78,7 @@ namespace Dominio
         }
         public static Servicio cargarServicio(string linea) {
             Servicio s = new Servicio();
+            s.ListaEventos = new List<TipoEvento>();
             string[] separadores = new string[] { "#", ":" };
             string[] serv = linea.Split(separadores, StringSplitOptions.RemoveEmptyEntries);
             s.NombreServicio = serv[0];
