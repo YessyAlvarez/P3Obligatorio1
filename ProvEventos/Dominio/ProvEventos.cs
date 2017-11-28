@@ -9,17 +9,14 @@ namespace Dominio
 {
     public class ProvEventos
     {
-        public static ICollection<Proveedor> leerTxtProveedores(string path)
+        public static List<Proveedor> leerTxtProveedores(string path)
         {
             List<Proveedor> proveedores = new List<Proveedor>();
-            if (File.Exists(path))
+            TextReader tr = new StreamReader(path);
+            string linea;
+            while ((linea = tr.ReadLine()) != null)
             {
-                TextReader tr = new StreamReader(path);
-                string linea;
-                while ((linea = tr.ReadLine()) != null)
-                {
-                    proveedores.Add(cargarProveedor(linea));
-                }
+                proveedores.Add(cargarProveedor(linea));
             }
             return proveedores;
         }
@@ -52,14 +49,44 @@ namespace Dominio
                 ps.Activo = true;
                 p.ListaServicios.Add(ps);
             }
-
             return p;
         }
 
-        public static ICollection<Servicio> leerTxtEventos(string path) {
-            List<Servicio> servicios = new List<Servicio>();
+        public static Proveedor primeraLineaTxtProveedores(string archivoProveedores)
+        {
+            TextReader tr = new StreamReader(archivoProveedores);
+            return cargarProveedor(tr.ReadLine());
+        }
 
+        public static Servicio primeraLineaTxtEventos(string archivoEventos)
+        {
+            TextReader tr = new StreamReader(archivoEventos);
+            return cargarServicio(tr.ReadLine());
+        }
+
+        public static List<Servicio> leerTxtEventos(string path)
+        {
+            List<Servicio> servicios = new List<Servicio>();
+            TextReader tr = new StreamReader(path);
+            string linea;
+            while ((linea = tr.ReadLine()) != null)
+            {
+                servicios.Add(cargarServicio(linea));
+            }
             return servicios;
+        }
+        public static Servicio cargarServicio(string linea) {
+            Servicio s = new Servicio();
+            string[] separadores = new string[] { "#", ":" };
+            string[] serv = linea.Split(separadores, StringSplitOptions.RemoveEmptyEntries);
+            s.NombreServicio = serv[0];
+            for (int i = 1; i < serv.Length; i++)
+            {
+                TipoEvento e = new TipoEvento();
+                e.Nombre = serv[i];
+                s.ListaEventos.Add(e);
+            }
+            return s;
         }
     }
 }
