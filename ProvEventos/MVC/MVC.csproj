@@ -216,6 +216,10 @@
     <Compile Include="Migrations\201711270021357_updatingDBstructure.Designer.cs">
       <DependentUpon>201711270021357_updatingDBstructure.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711280353047_updatingDBstructure1.cs" />
+    <Compile Include="Migrations\201711280353047_updatingDBstructure1.Designer.cs">
+      <DependentUpon>201711280353047_updatingDBstructure1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\contexto\MiContextoContext.cs" />
@@ -328,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711270021357_updatingDBstructure.resx">
       <DependentUpon>201711270021357_updatingDBstructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711280353047_updatingDBstructure1.resx">
+      <DependentUpon>201711280353047_updatingDBstructure1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Data;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dominio
 {

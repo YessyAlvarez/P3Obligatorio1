@@ -11,7 +11,7 @@ namespace Dominio
     {
         public int Id { set; get; }
         public string Nombre { set; get; }
-       // public string Descripcion { set; get; }
+      //public string Descripcion { set; get; }
         
         #region TOSTRING
         public override string ToString()
