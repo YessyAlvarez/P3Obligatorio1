@@ -23,9 +23,7 @@ namespace MVC
             string archivoEventos = System.Configuration.ConfigurationManager.AppSettings["archivoEventos"];
             if (System.IO.File.Exists(archivoEventos)) {
                 Servicio primero = ProvEventos.primeraLineaTxtEventos(archivoEventos);
-                var servId = from s in db.Servicio
-                             where s.NombreServicio == primero.NombreServicio
-                             select s;
+               
                 if (db.Servicio.Count() == 0) { 
                     List<Servicio> servicios = ProvEventos.leerTxtEventos(archivoEventos);
                     foreach (Servicio s in servicios)
@@ -34,7 +32,7 @@ namespace MVC
                             var tipoId = from te in db.TipoEventos
                                          where te.Nombre == t.Nombre
                                          select te.Id;
-                            if (db.TipoEventos.Find(Convert.ToInt32(tipoId)) != t) {
+                            if (db.TipoEventos.Count() != 0 && tipoId!=null && db.TipoEventos.Find(Convert.ToInt32(tipoId.FirstOrDefault())) != t) {
                                 db.TipoEventos.Add(t);
                             }
                         }
@@ -56,8 +54,9 @@ namespace MVC
                                        where s.NombreServicio == ps.NombreServicio
                                        select s.Id;
 
-                            if (db.Servicio.Find(Convert.ToInt32(serv)).NombreServicio == ps.NombreServicio)
-                            { 
+                            if (db.Servicio.Count() != 0 && serv!=null && db.Servicio.Find(Convert.ToInt32(serv.FirstOrDefault())).NombreServicio == ps.NombreServicio)
+                            //(db.TipoEventos.Count() != 0 && tipoId!=null && db.TipoEventos.Find(Convert.ToInt32(tipoId.FirstOrDefault())) != t)
+                            {
                                 db.ProveedorServicios.Add(ps);
                             }
                             else {
