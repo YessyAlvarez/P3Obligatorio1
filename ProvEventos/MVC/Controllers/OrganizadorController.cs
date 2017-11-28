@@ -21,8 +21,11 @@ namespace MVC.Controllers
         // GET: Organizador
         public ActionResult Index()
         {
-            return View(db.Organizadores.ToList());
-            //return View();
+            if (Convert.ToInt32(Session["perfilUsuario"]) == Convert.ToInt32(EnumPerfil.Admin)) {
+                return View(db.Organizadores.ToList());
+            }
+            
+            return View();
         }
 
         // GET: Organizador/Details/5
