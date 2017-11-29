@@ -19,6 +19,7 @@ namespace MVC.Controllers
         // GET: Proveedors
         public ActionResult Index()
         {
+            //List<Proveedor>db.Proveedores.ToList();
             return View(db.Proveedores.ToList());
         }
 
@@ -176,6 +177,56 @@ namespace MVC.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult ListarMasUsado() {
+            List<Proveedor> proveedores = db.Proveedores.ToList();
+            List<KeyValuePair<int, int>> provUsado = new List<KeyValuePair<int, int>>();
+            foreach (Proveedor pr in proveedores)
+            {
+                int rut = Convert.ToInt32(pr.Rut);
+                var listaEventos = from e in db.EventoProveedores
+                                   orderby e.ProveedorRUT
+                                   where e.ProveedorRUT == rut
+                                   select e;
+                List<EventoProveedor> eventosProveedor = listaEventos.ToList();
+                int uso = eventosProveedor.Count();
+
+                provUsado.Add(new KeyValuePair<int, int>(pr.Id, uso));
+            }
+            provUsado.Sort((x, y) => x.Value.CompareTo(y.Value));
+            List<Proveedor> ordenadoUsado = new List<Proveedor>();
+            foreach (KeyValuePair<int, int> kvp in provUsado)
+            {
+                ordenadoUsado.Add(db.Proveedores.Find(kvp.Key));
+            }
+            return View(ordenadoUsado);
+        }
+
+        public ActionResult ListarMasPuntaje()
+        {
+            List<Proveedor> proveedores = db.Proveedores.ToList();
+            List<KeyValuePair<int, int>> provPuntaje = new List<KeyValuePair<int, int>>();
+
+            foreach (Proveedor pr in proveedores) {
+                int rut = Convert.ToInt32(pr.Rut);
+                var listaEventos = from e in db.EventoProveedores
+                                   orderby e.ProveedorRUT
+                                   where e.ProveedorRUT == rut
+                                   select e;
+                List<EventoProveedor> eventosProveedor = listaEventos.ToList();
+                int puntaje = 0;
+                foreach (EventoProveedor ep in eventosProveedor) {
+                    puntaje += ep.Puntaje;
+                }
+                puntaje = puntaje / eventosProveedor.Count();
+                provPuntaje.Add(new KeyValuePair<int, int>(pr.Id, puntaje));
+            }
+            provPuntaje.Sort((x,y) => x.Value.CompareTo(y.Value));
+            List<Proveedor> ordenadoPuntaje = new List<Proveedor>();
+            foreach (KeyValuePair<int, int> kvp in provPuntaje) {
+                ordenadoPuntaje.Add(db.Proveedores.Find(kvp.Key));
+            }
+            return View(ordenadoPuntaje);
         }
     }
 }
