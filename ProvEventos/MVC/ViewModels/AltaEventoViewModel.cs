@@ -24,14 +24,19 @@ namespace MVC.ViewModels
 
         [Display(Name = "Tipo de Evento Seleccionado")]
         public String TipoEventoSeleccionado { set; get; }
-        public Evento AltaEvento { set; get; }
 
-        // proba de cambiar esto a un array de string
-        //Para por?
+        
+        [Display(Name = "Organizador")]
+        public Organizador Organizador { set; get; }
+        public List<ProveedorServicio> proveedorServicio { set; get; }
+
+
+        /*
+        
         public AltaEventoViewModel(Evento evento, IEnumerable<SelectListItem> tiposDeEvento) {
             this.AltaEvento = evento;
             this.TipoEvento = new SelectList(tiposDeEvento, "nombre", "nombre");
-        }
+        }*/
 
         public AltaEventoViewModel() { }
     }

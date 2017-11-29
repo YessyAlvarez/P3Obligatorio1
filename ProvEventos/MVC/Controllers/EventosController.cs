@@ -49,46 +49,41 @@ namespace MVC.Controllers
             return View(avm);
         }
 
-        // POST: Eventos/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(AltaEventoViewModel vm)
         {
             if (ModelState.IsValid)
             {
+                vm.Organizador = (Organizador)Session["Usuario"];
+                /*
                 vm.AltaEvento.TipoEvento = db.TipoEventos.Find(vm.TipoEventoSeleccionado);
 
                 db.Eventos.Add(vm.AltaEvento);
                 db.SaveChanges();
+
+                */
                 
-                vm.TipoEvento = new SelectList(db.TipoEventos.Select(e => e.Nombre).Distinct());
+                vm.TipoEventoSeleccionado = "Casamiento";
 
-                return RedirectToAction("Index");
-
-                /*
-                //Cargo el combo de Tipo de Eventos
-                var tEvento = db.TipoEventos.Select(e => e.Nombre).Distinct();
-                ViewBag.TipoEventoId = new SelectList(tEvento, "Name", "Name"); //,Object.Id // Esto hace que cuanod edite me cargue el combo
-
-                // Esta variable no la necesitas a mi gusto
-                // el combo tiene que mostar la lista de TipoEvento, no?
-                // eso ya lo tenes cuando cargaste arriba el viewBag.TipoEventoId
-                // En la vista tenes que definir un combo con el TipoEventoId y ahí quedan linkeados
-                 
-                   var results = db.TipoEventos.GroupBy(te => new { te.Nombre, te.Id })
-                .Select(g => new {g.Key.Nombre}).ToList();
+                return RedirectToAction("Create2", "Eventos", vm);
                 
-
-                db.Eventos.Add(evento);
-                db.SaveChanges();
-                return RedirectToAction("Index");*/
             }
 
             return View(vm);
         }
-        
+
+        [HttpGet]
+        public ActionResult Create2(AltaEventoViewModel vm)
+        {
+
+            ViewBag.OrganizadorId = new SelectList(db.Organizadores, "Id", "NombreApellido");
+
+            return View(vm);
+        }
+
+
         // GET: Eventos/Edit/5
         public ActionResult Edit(int? id)
         {

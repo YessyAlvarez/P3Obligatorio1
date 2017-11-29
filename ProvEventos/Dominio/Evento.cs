@@ -19,7 +19,10 @@ namespace Dominio
         
         public override string ToString()
         {
-            return "TipoEvento: " + this.TipoEvento.Nombre + " - Fecha: " + Fecha.ToShortDateString() + " - Organizador: " + Organizador.NombreApellido;
+            var toString = "TipoEvento: " + this.TipoEvento?.Nombre + " - Fecha: " + Fecha.ToShortDateString();
+            if (Organizador != null)
+                toString += " - Organizador: " + Organizador.NombreApellido;
+            return toString;
         }
     
 

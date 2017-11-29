@@ -313,6 +313,7 @@
     <Content Include="Views\Eventos\Index.cshtml" />
     <Content Include="Views\Servicios\CreateFromTxt.cshtml" />
     <Content Include="Views\Proveedors\CreateFromTxt.cshtml" />
+    <Content Include="Views\Eventos\Create2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
