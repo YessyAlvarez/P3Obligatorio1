@@ -23,7 +23,7 @@ namespace MVC
             string archivoEventos = System.Configuration.ConfigurationManager.AppSettings["archivoEventos"];
             if (System.IO.File.Exists(archivoEventos)) {
                
-                if (db.Servicio.Count() == 0) { 
+                if (db.TipoEventos.Count() == 0) { 
                     List<Servicio> servicios = ProvEventos.leerTxtEventos(archivoEventos);
                     foreach (Servicio s in servicios)
                     {
