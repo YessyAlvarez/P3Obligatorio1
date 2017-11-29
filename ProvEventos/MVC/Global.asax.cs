@@ -22,23 +22,23 @@ namespace MVC
             MiContextoContext db = new MiContextoContext();
             string archivoEventos = System.Configuration.ConfigurationManager.AppSettings["archivoEventos"];
             if (System.IO.File.Exists(archivoEventos)) {
-                Servicio primero = ProvEventos.primeraLineaTxtEventos(archivoEventos);
+              //  Servicio primero = ProvEventos.primeraLineaTxtEventos(archivoEventos);
                
                 if (db.Servicio.Count() == 0) { 
                     List<Servicio> servicios = ProvEventos.leerTxtEventos(archivoEventos);
                     foreach (Servicio s in servicios)
                     {
                         foreach (TipoEvento t in s.ListaEventos) {
-                            var tipoId = from te in db.TipoEventos
+                            var tipoId = (from te in db.TipoEventos
                                          where te.Nombre == t.Nombre
-                                         select te.Id;
-                            if (db.TipoEventos.Count() != 0 && tipoId!=null && db.TipoEventos.Find(Convert.ToInt32(tipoId.FirstOrDefault())) != t) {
+                                         select te.Id).Count();
+                            if (tipoId == 0) {
                                 db.TipoEventos.Add(t);
                             }
                         }
+                        db.Servicio.Add(s);
+                        db.SaveChanges();
                     }
-                    db.Servicio.AddRange(servicios);
-                    db.SaveChanges();
                 }
             }
             string archivoProveedores = System.Configuration.ConfigurationManager.AppSettings["archivoProveedores"];
