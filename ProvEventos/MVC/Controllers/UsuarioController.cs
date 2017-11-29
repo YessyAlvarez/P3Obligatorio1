@@ -25,6 +25,7 @@ namespace MVC.Controllers
         {
             Usuario u = db.Usuarios.Find(usuario.Usuario);
             if (u != null && u.Password == usuario.Password) {
+                Session["idUsuario"] = u.Id;
                 Session["nombreUsuario"] = u.NombreApellido;
                 Session["perfilUsuario"] = u.TipoPerfil;
                 //redirigir

@@ -9,7 +9,6 @@ namespace MVC.ViewModels
 {
     public class AltaEventoViewModel
     {
-
         [Display(Name = "Nombre del Organizador")]
         public string NombreOrganizador { set; get; }
 
@@ -25,7 +24,11 @@ namespace MVC.ViewModels
         [Display(Name = "Tipo de Evento Seleccionado")]
         public String TipoEventoSeleccionado { set; get; }
 
-        
+        [Display(Name = "Servicio para el tipo de evento seleccionado")]
+        public IEnumerable<SelectListItem> ServicioTipoEvento { set; get; }
+
+
+
         [Display(Name = "Organizador")]
         public Organizador Organizador { set; get; }
         public List<ProveedorServicio> proveedorServicio { set; get; }

@@ -45,7 +45,7 @@ namespace MVC.Controllers
 
             AltaEventoViewModel avm = new AltaEventoViewModel();
             avm.TipoEvento = new SelectList(db.TipoEventos.Select(e => e.Nombre).Distinct());
-                      
+            Console.WriteLine("avm.TipoEvento es: " + avm.TipoEvento);     
             return View(avm);
         }
 
@@ -56,7 +56,7 @@ namespace MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                vm.Organizador = (Organizador)Session["Usuario"];
+
                 /*
                 vm.AltaEvento.TipoEvento = db.TipoEventos.Find(vm.TipoEventoSeleccionado);
 
@@ -64,8 +64,10 @@ namespace MVC.Controllers
                 db.SaveChanges();
 
                 */
-                
-                vm.TipoEventoSeleccionado = "Casamiento";
+
+                vm.Organizador = (Organizador)Session["idUsuario"];
+
+                //vm.TipoEventoSeleccionado = vm.;
 
                 return RedirectToAction("Create2", "Eventos", vm);
                 
@@ -77,6 +79,17 @@ namespace MVC.Controllers
         [HttpGet]
         public ActionResult Create2(AltaEventoViewModel vm)
         {
+            var listaServicios = from ser in db.Servicio 
+                                 join tipo in db.TipoEventos on ser.Id equals tipo.Id
+                                 select new { NombreServicio = ser.NombreServicio };
+            
+            vm.ServicioTipoEvento = new SelectList(listaServicios.ToList());
+
+            var listaProveedores = @"FROM ser IN Servicio
+                        JOIN tipo IN TipoEvento ON ser.Id EQUALS tipo.Servicio_Id
+                        Select new { NombreServicio = ser.NombreServicio }";
+
+            //vm.ServicioTipoEvento = new SelectList(db.TipoEventos.Select(e => e.Nombre).Distinct());
 
             ViewBag.OrganizadorId = new SelectList(db.Organizadores, "Id", "NombreApellido");
 
