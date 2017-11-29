@@ -68,7 +68,14 @@ namespace MVC
                     db.SaveChanges();
                 }
             }
-             
+            if (db.Eventos.Count() == 0)
+            {
+                db.Usuarios.AddRange(ProvEventos.datosPruebaUsuarios());
+                db.Organizadores.AddRange(ProvEventos.datosPruebaOrganizadores());
+                db.Eventos.AddRange(ProvEventos.datosPruebaEventos(db.TipoEventos.ToList(), ProvEventos.datosPruebaOrganizadores()));
+                db.EventoProveedores.AddRange(ProvEventos.datosPruebaEventosProveedor(db.Proveedores.ToList(), ProvEventos.datosPruebaOrganizadores()));
+                db.SaveChanges();
+            }
         }
     }
 }
