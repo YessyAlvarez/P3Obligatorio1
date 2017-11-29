@@ -22,7 +22,6 @@ namespace MVC
             MiContextoContext db = new MiContextoContext();
             string archivoEventos = System.Configuration.ConfigurationManager.AppSettings["archivoEventos"];
             if (System.IO.File.Exists(archivoEventos)) {
-              //  Servicio primero = ProvEventos.primeraLineaTxtEventos(archivoEventos);
                
                 if (db.Servicio.Count() == 0) { 
                     List<Servicio> servicios = ProvEventos.leerTxtEventos(archivoEventos);
@@ -71,7 +70,7 @@ namespace MVC
             if (db.Eventos.Count() == 0)
             {
                 db.Usuarios.AddRange(ProvEventos.datosPruebaUsuarios());
-                db.Organizadores.AddRange(ProvEventos.datosPruebaOrganizadores());
+                //db.Organizadores.AddRange(ProvEventos.datosPruebaOrganizadores());
                 db.Eventos.AddRange(ProvEventos.datosPruebaEventos(db.TipoEventos.ToList(), ProvEventos.datosPruebaOrganizadores()));
                 db.EventoProveedores.AddRange(ProvEventos.datosPruebaEventosProveedor(db.Proveedores.ToList(), ProvEventos.datosPruebaOrganizadores()));
                 db.SaveChanges();

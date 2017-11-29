@@ -31,8 +31,8 @@ namespace Dominio
         public static List<Evento> datosPruebaEventos(List<TipoEvento> e, List<Organizador> o)
         {
             List<Evento> ret = new List<Evento>();
-            ret.Add(new Evento { Id = 1, TipoEvento = e[0], Fecha = new DateTime(2017, 1, 1), Direccion = "Alemania 1234", Organizador = o[0] });
-            ret.Add(new Evento { Id = 2, TipoEvento = e[1], Fecha = new DateTime(2017, 2, 2), Direccion = "Barbados 1234", Organizador = o[0] });
+            ret.Add(new Evento { Id = 1, TipoEvento = e[0], Fecha = new DateTime(2017, 1, 1), Direccion = "Alemania 1234", Organizador = o[1] });
+            ret.Add(new Evento { Id = 2, TipoEvento = e[1], Fecha = new DateTime(2017, 2, 2), Direccion = "Barbados 1234", Organizador = o[1] });
             ret.Add(new Evento { Id = 3, TipoEvento = e[2], Fecha = new DateTime(2017, 3, 3), Direccion = "Costa Rica 1234", Organizador = o[1] });
             ret.Add(new Evento { Id = 4, TipoEvento = e[3], Fecha = new DateTime(2017, 4, 4), Direccion = "Dinamarca 1234", Organizador = o[1] });
             ret.Add(new Evento { Id = 5, TipoEvento = e[4], Fecha = new DateTime(2017, 5, 5), Direccion = "Escocia 1234", Organizador = o[2] });
@@ -58,7 +58,7 @@ namespace Dominio
             ret.Add(new EventoProveedor { Id = 8, Puntaje = 3, Comentario = "Aceptable", ProveedorRUT = Convert.ToInt32(p[0].Rut), Organizador = o[0] });
             ret.Add(new EventoProveedor { Id = 9, Puntaje = 2, Comentario = "Malo", ProveedorRUT = Convert.ToInt32(p[0].Rut), Organizador = o[0] });
             ret.Add(new EventoProveedor { Id = 10, Puntaje = 1, Comentario = "Muy buen Trabajo", ProveedorRUT = Convert.ToInt32(p[0].Rut), Organizador = o[0] });
-            ret.Add(new EventoProveedor { Id = 11, Puntaje = 5, Comentario = "Muy buen Trabajo", ProveedorRUT = Convert.ToInt32(p[1].Rut), Organizador = o[0] });
+            ret.Add(new EventoProveedor { Id = 11, Puntaje = 5, Comentario = "Muy buen Trabajo", ProveedorRUT = Convert.ToInt32(p[0].Rut), Organizador = o[0] });
             ret.Add(new EventoProveedor { Id = 12, Puntaje = 4, Comentario = "Muy buen Trabajo", ProveedorRUT = Convert.ToInt32(p[0].Rut), Organizador = o[0] });
             ret.Add(new EventoProveedor { Id = 13, Puntaje = 3, Comentario = "Aceptable", ProveedorRUT = Convert.ToInt32(p[0].Rut), Organizador = o[0] });
             ret.Add(new EventoProveedor { Id = 14, Puntaje = 2, Comentario = "Malo", ProveedorRUT = Convert.ToInt32(p[0].Rut), Organizador = o[0] });
