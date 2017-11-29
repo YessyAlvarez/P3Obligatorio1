@@ -1,4 +1,4 @@
-﻿@model Dominio.Evento
+﻿@model MVC.ViewModels.AltaEventoViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -16,20 +16,34 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.AltaEvento.Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.AltaEvento.Fecha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AltaEvento.Fecha, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.AltaEvento.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.AltaEvento.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AltaEvento.Direccion, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        
+
+        <div class="form-group edit_group">
+            @Html.LabelFor(model => model.TipoEvento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                <div class="col-md-9 no-padding">
+                    @Html.DropDownListFor(model => model.TipoEventoSeleccionado, Model.TipoEvento)
+                </div>
+            </div>
+        </div>
+
+
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

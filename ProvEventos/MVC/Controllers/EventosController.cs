@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Dominio;
 using MVC.Models.contexto;
+using MVC.ViewModels;
 
 namespace MVC.Controllers
 {
@@ -36,10 +37,16 @@ namespace MVC.Controllers
             return View(evento);
         }
 
-        // GET: Eventos/Create
+        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            Evento nuevo = new Evento();
+            //IEnumerable<SelectListItem> tiposDeEventos = db.TipoEventos.ToList();
+
+            AltaEventoViewModel avm = new AltaEventoViewModel();
+            avm.TipoEvento = new SelectList(db.TipoEventos.Select(e => e.Nombre).Distinct());
+                      
+            return View(avm);
         }
 
         // POST: Eventos/Create
@@ -47,16 +54,39 @@ namespace MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Fecha,Direccion")] Evento evento)
+        public ActionResult Create(AltaEventoViewModel vm)
         {
             if (ModelState.IsValid)
             {
+                vm.AltaEvento.TipoEvento = db.TipoEventos.Find(vm.TipoEventoSeleccionado);
+
+                db.Eventos.Add(vm.AltaEvento);
+                db.SaveChanges();
+                
+                vm.TipoEvento = new SelectList(db.TipoEventos.Select(e => e.Nombre).Distinct());
+
+                return RedirectToAction("Index");
+
+                /*
+                //Cargo el combo de Tipo de Eventos
+                var tEvento = db.TipoEventos.Select(e => e.Nombre).Distinct();
+                ViewBag.TipoEventoId = new SelectList(tEvento, "Name", "Name"); //,Object.Id // Esto hace que cuanod edite me cargue el combo
+
+                // Esta variable no la necesitas a mi gusto
+                // el combo tiene que mostar la lista de TipoEvento, no?
+                // eso ya lo tenes cuando cargaste arriba el viewBag.TipoEventoId
+                // En la vista tenes que definir un combo con el TipoEventoId y ahí quedan linkeados
+                 
+                   var results = db.TipoEventos.GroupBy(te => new { te.Nombre, te.Id })
+                .Select(g => new {g.Key.Nombre}).ToList();
+                
+
                 db.Eventos.Add(evento);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index");*/
             }
 
-            return View(evento);
+            return View(vm);
         }
         
         // GET: Eventos/Edit/5
