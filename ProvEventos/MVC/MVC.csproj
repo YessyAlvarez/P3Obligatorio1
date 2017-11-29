@@ -198,6 +198,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EventoProveedorsController.cs" />
     <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -314,6 +315,9 @@
     <Content Include="Views\Servicios\CreateFromTxt.cshtml" />
     <Content Include="Views\Proveedors\CreateFromTxt.cshtml" />
     <Content Include="Views\Eventos\Create2.cshtml" />
+    <Content Include="Views\Eventos\VerEventos.cshtml" />
+    <Content Include="Views\EventoProveedors\CalificarProveedores.cshtml" />
+    <Content Include="Views\EventoProveedors\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

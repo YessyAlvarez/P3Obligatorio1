@@ -153,7 +153,18 @@ namespace MVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult VerEventos(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var eventos = from e in db.Eventos
+                          where e.Organizador.Id == id
+                          select e;
 
+            return View(eventos);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

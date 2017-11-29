@@ -43,6 +43,9 @@ namespace MVC.Controllers
             return View(organizador);
         }
 
+
+       
+
         // GET: Organizador/Create
         public ActionResult Create()
         {
